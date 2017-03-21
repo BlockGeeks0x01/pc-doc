@@ -1,6 +1,64 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/",
+    "title": "错误码",
+    "name": "ErrorCode",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "0",
+            "description": "<p>成功</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "100001",
+            "description": "<p>未知错误</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "100002",
+            "description": "<p>参数错误</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "100003",
+            "description": "<p>用户未登录</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "100004",
+            "description": "<p>无权限访问</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "100005",
+            "description": "<p>资源不存在</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
+    "type": "get",
     "url": "/api/file/:fid",
     "title": "访问文件",
     "name": "AccessFile",
@@ -72,6 +130,25 @@ define({ "api": [
     },
     "filename": "../purchasing_consortia/frontend/file.py",
     "groupTitle": "File"
+  },
+  {
+    "type": "get",
+    "url": "/api/products/:id",
+    "title": "产品详情",
+    "name": "ProductDetail",
+    "group": "Product",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"id\": 1,\n    \"brief_name\": \"产品简称\",\n    \"full_name\": \"产品全称\",\n    \"profit_type\": 1,       # 收益类型 0：固定， 1：浮动\n    \"status\": 1,            # 产品状态 0: 待上架 ，1：筹备中,2:众筹中,3:已成立,4:已结束,-1:预审失败,-2:众筹失败\n    \"minimum_size\": 12,     # 最小募集规模/万\n    \"maximum_size\": 33,     # 最大募集规模/万\n    \"current_precontract_size\": 12, # 当前预约额度/万\n    \"last_pay_time\": \"2017-12-3\",   # 最迟打款日期\n    \"minimum_subscription_size\": 10,    # 起够金额\n    \"strategy\": \"产品策略\",\n    \"fund_manager\": \"管理人\",\n    \"start_date\": \"2017-12-16T16:00:00\",    # 产品成立日\n    \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    \"open_date\": \"2017-12-16T16:00:00\":     # 产品开放日\n    \"dividend_type\": \"分红方式\"\n    \"close_time\": \"封闭期\",\n    \"other_time_point\": \"其他时间节点\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"invest_info\": \"投资方向\",\n    \"risk_info\": \"风控措施\",\n    \"fee_info\": \"产品费用\",\n    \"fee_sale\": \"销售费用\",\n    \"contract_file\": \"/api/file/3\",    # 合同文件\n    \"images\": [\"http://address1\", \"http://address2\"],   # 配图\n    \"tags\": \"tag1,tag2\",    # 标签\n    \"remark\": \"备注\",\n    \"major_timeline\": {},       # 产品流程\n}",
+          "type": "json"
+        }
+      ]
+    }
   },
   {
     "type": "get",
