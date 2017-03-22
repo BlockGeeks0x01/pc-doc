@@ -4,13 +4,15 @@
   "description": "purchasing-consortia api doc",
   "title": "联合采购 API Doc",
   "order": [
-    "Product"
+    "Constant",
+    "Product",
+    "File"
   ],
   "sampleUrl": false,
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-03-21T17:01:21.209Z",
+    "time": "2017-03-22T01:27:51.806Z",
     "url": "http://apidocjs.com",
     "version": "0.13.1"
   }
