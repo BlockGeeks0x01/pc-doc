@@ -49,6 +49,13 @@ define({ "api": [
             "optional": false,
             "field": "100005",
             "description": "<p>资源不存在</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "110001",
+            "description": "<p>产品节点无法参与</p> "
           }
         ]
       }
@@ -130,6 +137,50 @@ define({ "api": [
     },
     "filename": "../purchasing_consortia/frontend/file.py",
     "groupTitle": "File"
+  },
+  {
+    "type": "patch",
+    "url": "/api/products/activity/:node_id",
+    "title": "参与/取消参与活动",
+    "name": "ParticipateNode",
+    "group": "Product",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>bool</p> ",
+            "optional": false,
+            "field": "participate",
+            "description": "<p>参与/取消</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": true,
+            "field": "name",
+            "description": "<p>姓名</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": true,
+            "field": "mobile",
+            "description": "<p>联系方式</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"participate\": true,\n    \"name\": \"小明\",\n    \"mobile\": \"15068975727\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
   },
   {
     "type": "get",
