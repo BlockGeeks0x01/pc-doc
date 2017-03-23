@@ -5,6 +5,7 @@ define({
   "title": "联合采购 API Doc",
   "order": [
     "Constant",
+    "Structure",
     "Product",
     "File"
   ],
@@ -12,7 +13,7 @@ define({
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-03-23T09:01:28.064Z",
+    "time": "2017-03-23T09:12:44.664Z",
     "url": "http://apidocjs.com",
     "version": "0.13.1"
   }
