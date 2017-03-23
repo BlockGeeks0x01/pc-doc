@@ -141,7 +141,7 @@
   {
     "type": "patch",
     "url": "/api/products/activity/:node_id",
-    "title": "参与/取消参与活动",
+    "title": "参与/取消参与产品节点活动",
     "name": "ParticipateNode",
     "group": "Product",
     "version": "1.0.0",
@@ -208,6 +208,33 @@
     "name": "Products",
     "group": "Product",
     "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "status",
+            "description": "<p>产品状态 1:观察中,2:采购中,3:往期产品</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p> "
+          }
+        ]
+      }
+    },
     "filename": "../purchasing_consortia/frontend/product.py",
     "groupTitle": "Product",
     "success": {
