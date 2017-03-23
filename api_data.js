@@ -66,44 +66,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/",
-    "title": "非分页返回的结构",
-    "name": "NormalStructure_apiGroup_Structure",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"data\": {},\n    \"ec\": 0,\n    \"msg\": \"\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
-    "group": "E__project_maice_purchasing_consortia_purchasing_consortia_apidoc_py",
-    "groupTitle": "E__project_maice_purchasing_consortia_purchasing_consortia_apidoc_py"
-  },
-  {
-    "type": "get",
-    "url": "/",
-    "title": "分页返回的结构",
-    "name": "PageStructure_apiGroup_Structure",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"data\": {\n        \"has_next\": false,\n        \"has_prev\": false,\n        \"items\": [],\n        \"page\": 1,\n        \"total\": 100\n    },\n    \"ec\": 0,\n    \"msg\": \"\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
-    "group": "E__project_maice_purchasing_consortia_purchasing_consortia_apidoc_py",
-    "groupTitle": "E__project_maice_purchasing_consortia_purchasing_consortia_apidoc_py"
-  },
-  {
-    "type": "get",
     "url": "/api/file/:fid",
     "title": "访问文件",
     "name": "AccessFile",
@@ -284,5 +246,43 @@ define({ "api": [
         }
       ]
     }
+  },
+  {
+    "type": "get",
+    "url": "/",
+    "title": "非分页返回的结构",
+    "name": "NormalStructure",
+    "group": "Structure",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"data\": {},\n    \"ec\": 0,\n    \"msg\": \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Structure"
+  },
+  {
+    "type": "get",
+    "url": "/",
+    "title": "分页返回的结构",
+    "name": "PageStructure",
+    "group": "Structure",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"data\": {\n        \"has_next\": false,\n        \"has_prev\": false,\n        \"items\": [],\n        \"page\": 1,\n        \"total\": 100\n    },\n    \"ec\": 0,\n    \"msg\": \"\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Structure"
   }
 ] });
