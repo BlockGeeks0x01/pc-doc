@@ -140,10 +140,10 @@
   },
   {
     "type": "post",
-    "url": "/api/products/orders",
-    "title": "创建订单",
+    "url": "/api/products/:product_id/orders",
+    "title": "创建采购订单",
     "name": "CreateOrder",
-    "group": "Product",
+    "group": "Order",
     "version": "1.0.0",
     "parameter": {
       "fields": {
@@ -180,7 +180,7 @@
       ]
     },
     "filename": "../purchasing_consortia/frontend/product.py",
-    "groupTitle": "Product"
+    "groupTitle": "Order"
   },
   {
     "type": "patch",
