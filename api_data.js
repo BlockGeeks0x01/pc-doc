@@ -56,6 +56,92 @@ define({ "api": [
             "optional": false,
             "field": "110001",
             "description": "<p>产品节点无法参与</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "120001",
+            "description": "<p>产品无法购买</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "130001",
+            "description": "<p>预约额度超过产品剩余额度</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "130002",
+            "description": "<p>最迟打款日期晚于产品的最迟打款日期</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
+    "type": "get",
+    "url": "/",
+    "title": "产品状态",
+    "name": "ProductStatus",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "0",
+            "description": "<p>待观察</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "1",
+            "description": "<p>观察中</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "2",
+            "description": "<p>众筹中</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "3",
+            "description": "<p>已成立</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "4",
+            "description": "<p>已结束</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "-1",
+            "description": "<p>淘汰</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "-2",
+            "description": "<p>众筹失败</p> "
           }
         ]
       }
@@ -160,7 +246,7 @@ define({ "api": [
             "type": "<p>int</p> ",
             "optional": false,
             "field": "precontract_amount",
-            "description": "<p>预约额度</p> "
+            "description": "<p>预约额度/万</p> "
           },
           {
             "group": "Parameter",
