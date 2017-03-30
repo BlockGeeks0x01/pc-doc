@@ -412,7 +412,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/api/products/:product_id/orders",
+    "url": "/api/orders",
     "title": "创建订单",
     "name": "CreateOrder",
     "group": "Order",
@@ -420,6 +420,13 @@ define({ "api": [
     "parameter": {
       "fields": {
         "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "product_id",
+            "description": "<p>产品ID</p> "
+          },
           {
             "group": "Parameter",
             "type": "<p>string</p> ",
@@ -446,13 +453,32 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "[{\n    \"precontract_amount\": 300,  # 预约额度\n    \"name\": \"客户姓名\",\n    \"estimate_pay_time\": \"2017-10-23\"\n}]",
+          "content": "[{\n    \"product_id\": 100013,\n    \"precontract_amount\": 300,  # 预约额度\n    \"name\": \"客户姓名\",\n    \"estimate_pay_time\": \"2017-10-23\"\n}]",
           "type": "json"
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "../purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
+  },
+  {
+    "type": "get",
+    "url": "/api/orders/:id",
+    "title": "订单详情",
+    "name": "OrderDetail",
+    "group": "Order",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\"\n    },\n    \"customer_name\": \"客户名称\",\n    \"estimate_pay_time\": \"2017-03-22\",  # 预计打款日\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"profit_info\": \"分成说明\",\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"last_news\": \"最新进度\",\n    \"timeline\": [{                      # 时间线\n        \"name\": \"资料报单\",\n        \"status\": 1     # 进度状态 0:待进行,1:进行中,2:已结束,3:失败\n    }],\n    \"history\": [{                       # 订单动态历史\n        \"timestamp\": \"2017-04-12\",\n        \"event\": \"订单已创建，正在等待公司审核\"\n    }]\n}",
+          "type": "json"
+        }
+      ]
+    }
   },
   {
     "type": "patch",
