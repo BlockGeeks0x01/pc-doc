@@ -412,7 +412,7 @@
   },
   {
     "type": "post",
-    "url": "/api/orders",
+    "url": "/api/orders/:product_id",
     "title": "创建订单",
     "name": "CreateOrder",
     "group": "Order",
@@ -420,13 +420,6 @@
     "parameter": {
       "fields": {
         "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>int</p> ",
-            "optional": false,
-            "field": "product_id",
-            "description": "<p>产品ID</p> "
-          },
           {
             "group": "Parameter",
             "type": "<p>string</p> ",
@@ -463,7 +456,7 @@
   },
   {
     "type": "get",
-    "url": "/api/orders/:id",
+    "url": "/api/orders/:order_no",
     "title": "订单详情",
     "name": "OrderDetail",
     "group": "Order",
@@ -590,6 +583,36 @@
     }
   },
   {
+    "type": "post",
+    "url": "/api/sms",
+    "title": "发送短信",
+    "name": "SendSms",
+    "group": "Sms",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>手机号</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "type",
+            "description": "<p>类型,1:验证码</p> "
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/sms.py",
+    "groupTitle": "Sms"
+  },
+  {
     "type": "get",
     "url": "/",
     "title": "非分页返回的结构",
@@ -626,5 +649,42 @@
     "version": "0.0.0",
     "filename": "../purchasing_consortia/apidoc.py",
     "groupTitle": "Structure"
+  },
+  {
+    "type": "post",
+    "url": "/api/user",
+    "title": "用户注册",
+    "name": "RegisterUser",
+    "group": "User",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>手机号</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "code",
+            "description": "<p>验证码</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>密码</p> "
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
   }
 ]
