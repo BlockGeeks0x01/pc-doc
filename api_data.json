@@ -446,7 +446,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "[{\n    \"product_id\": 100013,\n    \"precontract_amount\": 300,  # 预约额度\n    \"name\": \"客户姓名\",\n    \"estimate_pay_time\": \"2017-10-23\"\n}]",
+          "content": "[{\n    \"precontract_amount\": 300,  # 预约额度\n    \"name\": \"客户姓名\",\n    \"estimate_pay_time\": \"2017-10-23\"\n}]",
           "type": "json"
         }
       ]
