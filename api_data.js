@@ -477,7 +477,7 @@ define({ "api": [
     "type": "get",
     "url": "/api/orders",
     "title": "订单列表",
-    "name": "OrderDetail",
+    "name": "OrderList",
     "group": "Order",
     "version": "1.0.0",
     "parameter": {
