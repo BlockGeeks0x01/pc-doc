@@ -6,15 +6,17 @@ define({
   "order": [
     "Constant",
     "Structure",
+    "User",
     "Product",
     "Order",
+    "Notification",
     "File"
   ],
   "sampleUrl": false,
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-04-01T03:01:26.183Z",
+    "time": "2017-04-01T03:02:01.514Z",
     "url": "http://apidocjs.com",
     "version": "0.13.1"
   }
