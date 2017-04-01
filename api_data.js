@@ -476,6 +476,65 @@ define({ "api": [
     "groupTitle": "File"
   },
   {
+    "type": "get",
+    "url": "/api/notifications",
+    "title": "消息列表",
+    "name": "NotificationList",
+    "group": "Notification",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"id\": 1,\n    \"read\": false,\n    \"type\": 1,          # 通知类型,1:普通(不跳转), 2:订单, 3:产品, 4:认证\n    \"resource_id\": \"100932\",\n    \"msg_list\": [{\n        \"type\": 3,          # 信息类型, 1:文本, 2:产品\n        \"text\": \"年后\",\n        \"resource_id\": \"22333\"\n    }]\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/notice.py",
+    "groupTitle": "Notification",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p> "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/api/notifications/clear",
+    "title": "读取全部消息",
+    "name": "NotificationReadAll",
+    "group": "Notification",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/notice.py",
+    "groupTitle": "Notification"
+  },
+  {
+    "type": "patch",
+    "url": "/api/notifications/:id/read",
+    "title": "消息标记已读",
+    "name": "ReadNotification",
+    "group": "Notification",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/notice.py",
+    "groupTitle": "Notification"
+  },
+  {
     "type": "post",
     "url": "/api/orders/:product_id",
     "title": "创建订单",
