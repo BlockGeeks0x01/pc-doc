@@ -54,6 +54,20 @@
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
+            "field": "100006",
+            "description": "<p>注册验证码短信发送太频繁</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "100007",
+            "description": "<p>验证码错误</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
             "field": "110001",
             "description": "<p>产品节点无法参与</p> "
           },
@@ -77,6 +91,48 @@
             "optional": false,
             "field": "130002",
             "description": "<p>最迟打款日期晚于产品的最迟打款日期</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140001",
+            "description": "<p>手机号已被注册</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140002",
+            "description": "<p>初始化账户失败</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140003",
+            "description": "<p>账号被冻结</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140004",
+            "description": "<p>登录密码错误</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140005",
+            "description": "<p>账号不存在</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140006",
+            "description": "<p>当前有待处理的认证审核</p> "
           }
         ]
       }
@@ -407,6 +463,15 @@
         ]
       }
     },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"ec\": 0,\n    \"message\": \"Success\",\n    \"data\": \"http://dasjlkjlk21j3kjlkdsaj.png\"\n}",
+          "type": "json"
+        }
+      ]
+    },
     "filename": "../purchasing_consortia/frontend/file.py",
     "groupTitle": "File"
   },
@@ -705,9 +770,127 @@
   },
   {
     "type": "post",
-    "url": "/api/user",
+    "url": "/api/user/certificate",
+    "title": "提交认证资料",
+    "name": "CertificateApply",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "company_name",
+            "description": "<p>公司</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "position",
+            "description": "<p>职位</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "work_year",
+            "description": "<p>工作年限(1:1~3年, 2:3~5年, 3:5~10年, 4:10年以上)</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "industry",
+            "description": "<p>行业(1:银行, 2:信托, 3:资管, 4:保险, 5:证券, 6:基金, 7:P2P, 8:三方)</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "business_card_pic",
+            "description": "<p>名片地址</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/certificate",
+    "title": "获取认证信息",
+    "name": "GetCertificate",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"name\": \"小明\",\n    \"company_name\": \"公司A\",\n    \"position\": \"职位理财师\",\n    \"work_year\": 1,\n    \"industry\": 3,\n    \"business_card_pic\": \"/api/file/1\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/login",
+    "title": "用户登录",
+    "name": "Login",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>手机号</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>密码</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/api/user/logout",
+    "title": "注销",
+    "name": "Logout",
+    "group": "User",
+    "description": "<p>用户注销</p> ",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/api/user/signup",
     "title": "用户注册",
-    "name": "RegisterUser",
+    "name": "Register",
     "group": "User",
     "version": "1.0.0",
     "parameter": {
