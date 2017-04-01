@@ -981,5 +981,24 @@
     },
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/profile",
+    "title": "获取用户信息",
+    "name": "UserProfile",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"user_id\": 100094,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"subscription_order_count\": 12,     # 待审核订单\n    \"contract_order_count\": 13,         # 待合同邮寄订单\n    \"declaration_order_count\": 23,      # 待资料报单订单\n    \"return_contract_order_count\": 99,  # 待合同寄还订单\n    \"confirm_order_count\": 19,          # 待分成确认订单\n    \"unread_notifications\": 33,         # 未读消息数\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
   }
 ]
