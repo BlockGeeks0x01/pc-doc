@@ -935,6 +935,16 @@
     "groupTitle": "User"
   },
   {
+    "type": "delete",
+    "url": "/api/user/address/:id",
+    "title": "删除地址",
+    "name": "DeleteAddress",
+    "group": "User",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
     "type": "get",
     "url": "/api/user/certificate",
     "title": "获取认证信息",
@@ -1028,6 +1038,29 @@
         ]
       }
     },
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "patch",
+    "url": "/api/user/address/:id",
+    "title": "修改默认状态",
+    "name": "UpdateAddress",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>bool</p> ",
+            "optional": false,
+            "field": "is_default",
+            "description": "<p>是否默认</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
