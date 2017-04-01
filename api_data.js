@@ -68,6 +68,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
+            "field": "100008",
+            "description": "<p>手机格式错误</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
             "field": "110001",
             "description": "<p>产品节点无法参与</p> "
           },
@@ -579,6 +586,25 @@ define({ "api": [
     "groupTitle": "Order"
   },
   {
+    "type": "post",
+    "url": "/api/orders/:order_no/contract",
+    "title": "申领合同",
+    "name": "GetContract",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"province\": \"浙江省\",\n    \"city\": \"杭州市\",\n    \"district\": \"西湖区\",\n    \"address\": \"曙光路122号1006室\",\n    \"recipients\": \"小明\",\n    \"tel\": \"15068927843\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
     "type": "get",
     "url": "/api/orders/:order_no",
     "title": "订单详情",
@@ -886,6 +912,29 @@ define({ "api": [
     "groupTitle": "User"
   },
   {
+    "type": "post",
+    "url": "/api/user/signup/check",
+    "title": "检查注册信息",
+    "name": "CheckSignUpData",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>手机号</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
     "type": "get",
     "url": "/api/user/certificate",
     "title": "获取认证信息",
@@ -979,6 +1028,25 @@ define({ "api": [
         ]
       }
     },
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/address",
+    "title": "获取用户地址列表",
+    "name": "UserAddresses",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"id\": 1,\n    \"is_default\": false,\n    \"province\": \"浙江省\",\n    \"city\": \"杭州市\",\n    \"district\": \"西湖区\",\n    \"address\": \"曙光路122号1006室\",\n    \"recipients\": \"小明\",\n    \"tel\": \"15068927843\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
