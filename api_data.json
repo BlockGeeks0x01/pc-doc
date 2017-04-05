@@ -1027,7 +1027,7 @@
     "groupTitle": "User"
   },
   {
-    "type": "get",
+    "type": "post",
     "url": "/api/user/login",
     "title": "用户登录",
     "name": "Login",
