@@ -631,6 +631,25 @@
   },
   {
     "type": "post",
+    "url": "/api/orders/:order_no/declaration",
+    "title": "资料报单",
+    "name": "Declaration",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"actual_pay_time\": \"2017-12-1\",     # 实际打款日期\n    \"customer_id_card_no\": \"3332132132132\", # 身份证号\n    \"pay_pic\": \"/api/file/3\",   # 打款凭证\n    \"front_of_id_pic\": \"/api/file/5\",   # 身份证正面\n    \"back_of_id_pic\": \"/api/file/33\",   # 身份证背面\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "post",
     "url": "/api/orders/:order_no/contract",
     "title": "申领合同",
     "name": "GetContract",
@@ -645,6 +664,25 @@
         }
       ]
     },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "get",
+    "url": "/api/orders/:order_no/declaration/info",
+    "title": "资料报单信息",
+    "name": "OrderDeclarationInfo",
+    "group": "Order",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"product_name\": \"产品名称\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"customer_name\": \"客户名称\",\n    \"amount\": 3000\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
@@ -1185,6 +1223,25 @@
         {
           "title": "Success-Response:",
           "content": "[{\n    \"id\": 1,\n    \"is_default\": false,\n    \"province\": \"浙江省\",\n    \"city\": \"杭州市\",\n    \"district\": \"西湖区\",\n    \"address\": \"曙光路122号1006室\",\n    \"recipients\": \"小明\",\n    \"tel\": \"15068927843\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/customers",
+    "title": "客户列表",
+    "name": "UserCustomers",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"name\": \"张东\",\n    \"id_card_no\": \"330905199704860582\",     # 身份证号\n    \"front_of_id_pic\": \"/api/file/3\",       # 身份证正面\n    \"back_of_id_pic\": \"/api/file/34\"        # 身份证背面\n}]",
           "type": "json"
         }
       ]
