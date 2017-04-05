@@ -807,7 +807,7 @@
             "type": "<p>int</p> ",
             "optional": false,
             "field": "type",
-            "description": "<p>类型,1:验证码</p> "
+            "description": "<p>类型,1:登录验证码</p> "
           }
         ]
       }
@@ -852,6 +852,25 @@
     "version": "0.0.0",
     "filename": "../purchasing_consortia/apidoc.py",
     "groupTitle": "Structure"
+  },
+  {
+    "type": "post",
+    "url": "/api/user/unfreeze_apply",
+    "title": "申请解冻",
+    "name": "ApplyUnfreeze",
+    "group": "User",
+    "parameter": {
+      "examples": [
+        {
+          "title": "手机号密码方式:",
+          "content": "{\n    \"login\": \"15067125727\",\n    \"password\": \"dsa98d09sa\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
   },
   {
     "type": "post",
@@ -1038,6 +1057,43 @@
         ]
       }
     },
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/api/user/password/reset",
+    "title": "忘记密码",
+    "name": "ResetPassword",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>手机号</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "code",
+            "description": "<p>验证码</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>密码</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
