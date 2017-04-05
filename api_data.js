@@ -1100,7 +1100,7 @@ define({ "api": [
   {
     "type": "patch",
     "url": "/api/user/address/:id",
-    "title": "修改默认状态",
+    "title": "修改地址默认状态",
     "name": "UpdateAddress",
     "group": "User",
     "parameter": {
