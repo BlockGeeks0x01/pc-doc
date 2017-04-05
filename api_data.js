@@ -110,6 +110,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
+            "field": "130004",
+            "description": "<p>不是订单管理员</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
             "field": "140001",
             "description": "<p>手机号已被注册</p> "
           },
@@ -547,6 +554,36 @@ define({ "api": [
     "version": "1.0.0",
     "filename": "../purchasing_consortia/frontend/notice.py",
     "groupTitle": "Notification"
+  },
+  {
+    "type": "post",
+    "url": "/api/orders/:order_no/check",
+    "title": "管理员审核",
+    "name": "AdminCheckOrder",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>bool</p> ",
+            "optional": false,
+            "field": "pass",
+            "description": "<p>是否通过</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": true,
+            "field": "msg",
+            "description": "<p>原因</p> "
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
   },
   {
     "type": "post",
