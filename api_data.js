@@ -103,6 +103,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
+            "field": "130003",
+            "description": "<p>存在未完成订单</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
             "field": "140001",
             "description": "<p>手机号已被注册</p> "
           },
@@ -875,7 +882,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/api/user/certificate",
-    "title": "提交认证资料",
+    "title": "提交/修改认证资料",
     "name": "CertificateApply",
     "group": "User",
     "parameter": {
@@ -1025,6 +1032,16 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/api/user/quit_org",
+    "title": "退出机构",
+    "name": "QuitOrg",
+    "group": "User",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
     "url": "/api/user/signup",
     "title": "用户注册",
     "name": "Register",
@@ -1149,7 +1166,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100094,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"subscription_order_count\": 12,     # 待审核订单\n    \"contract_order_count\": 13,         # 待合同邮寄订单\n    \"declaration_order_count\": 23,      # 待资料报单订单\n    \"return_contract_order_count\": 99,  # 待合同寄还订单\n    \"confirm_order_count\": 19,          # 待分成确认订单\n    \"unread_notifications\": 33,         # 未读消息数\n}",
+          "content": "{\n    \"user_id\": 100094,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"subscription_order_count\": 12,     # 待审核订单\n    \"contract_order_count\": 13,         # 待合同邮寄订单\n    \"declaration_order_count\": 23,      # 待资料报单订单\n    \"return_contract_order_count\": 99,  # 待合同寄还订单\n    \"confirm_order_count\": 19,          # 待分成确认订单\n    \"unread_notifications\": 33,         # 未读消息数\n}",
           "type": "json"
         }
       ]
