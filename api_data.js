@@ -253,27 +253,41 @@ define({ "api": [
             "type": "<p>int</p> ",
             "optional": false,
             "field": "112",
-            "description": "<p>等待项目成立</p> "
+            "description": "<p>等待麦策确认合同扫描件有效性</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
             "field": "113",
-            "description": "<p>待分成确认</p> "
+            "description": "<p>已确认合同有效，等待寄还</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
             "field": "114",
-            "description": "<p>等待麦策确认订单结束</p> "
+            "description": "<p>等待项目成立</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
             "field": "115",
+            "description": "<p>待分成确认</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "116",
+            "description": "<p>等待麦策确认订单结束</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "117",
             "description": "<p>订单结束</p> "
           }
         ]
@@ -587,6 +601,25 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/api/orders/:order_no/contract",
+    "title": "申领合同",
+    "name": "ClaimContract",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"province\": \"浙江省\",\n    \"city\": \"杭州市\",\n    \"district\": \"西湖区\",\n    \"address\": \"曙光路122号1006室\",\n    \"recipients\": \"小明\",\n    \"tel\": \"15068927843\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "post",
     "url": "/api/orders/:product_id",
     "title": "创建订单",
     "name": "CreateOrder",
@@ -649,35 +682,16 @@ define({ "api": [
     "groupTitle": "Order"
   },
   {
-    "type": "post",
-    "url": "/api/orders/:order_no/contract",
-    "title": "申领合同",
-    "name": "GetContract",
-    "group": "Order",
-    "version": "1.0.0",
-    "parameter": {
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{\n    \"province\": \"浙江省\",\n    \"city\": \"杭州市\",\n    \"district\": \"西湖区\",\n    \"address\": \"曙光路122号1006室\",\n    \"recipients\": \"小明\",\n    \"tel\": \"15068927843\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "../purchasing_consortia/frontend/order.py",
-    "groupTitle": "Order"
-  },
-  {
     "type": "get",
-    "url": "/api/orders/:order_no/declaration/info",
-    "title": "资料报单信息",
-    "name": "OrderDeclarationInfo",
+    "url": "/api/orders/:order_no/contract/scanning_copy",
+    "title": "获取合同扫描件",
+    "name": "GetOrderContractScanningCopy",
     "group": "Order",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"product_name\": \"产品名称\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"customer_name\": \"客户名称\",\n    \"amount\": 3000\n}",
+          "content": "[\"/api/file/1\", \"/api/file/33\"]",
           "type": "json"
         }
       ]
@@ -757,6 +771,29 @@ define({ "api": [
         }
       ]
     }
+  },
+  {
+    "type": "post",
+    "url": "/api/orders/:order_no/contract/scanning_copy",
+    "title": "上传合同扫描件",
+    "name": "UploadOrderContractScanningCopy",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>list</p> ",
+            "optional": false,
+            "field": "scanning_copy",
+            "description": "<p>合同扫描件列表</p> "
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
   },
   {
     "type": "patch",
