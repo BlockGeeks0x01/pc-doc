@@ -75,6 +75,20 @@
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
+            "field": "100009",
+            "description": "<p>身份证号不合法</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "100010",
+            "description": "<p>非认证用户，无法访问</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
             "field": "110001",
             "description": "<p>产品节点无法参与</p> "
           },
