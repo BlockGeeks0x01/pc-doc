@@ -138,6 +138,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>int</p> ",
             "optional": false,
+            "field": "130006",
+            "description": "<p>订单预约额度不正确</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
             "field": "140001",
             "description": "<p>手机号已被注册</p> "
           },
@@ -891,6 +898,45 @@ define({ "api": [
     "groupTitle": "Product"
   },
   {
+    "type": "get",
+    "url": "/api/products/followed",
+    "title": "已关注的产品列表",
+    "name": "FollowedProducts",
+    "group": "Product",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"status\": 1\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p> "
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "patch",
     "url": "/api/products/activity/:node_id",
     "title": "参与/取消参与产品节点活动",
@@ -997,6 +1043,45 @@ define({ "api": [
           "type": "json"
         }
       ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/api/products/purchased",
+    "title": "已购的产品列表",
+    "name": "PurchasedProducts",
+    "group": "Product",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"status\": 1,\n    \"amount\": 300,\n    \"currency\": 1,      # 1:人民币, 2:美元\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p> "
+          }
+        ]
+      }
     }
   },
   {
@@ -1238,6 +1323,45 @@ define({ "api": [
     "groupTitle": "User"
   },
   {
+    "type": "get",
+    "url": "/api/user/org/members",
+    "title": "机构成员",
+    "name": "OrgMembers",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p> "
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "post",
     "url": "/api/user/quit_org",
     "title": "退出机构",
@@ -1392,7 +1516,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"name\": \"王伟强\",\n    \"avatar\": \"http://www.xsadas.jpg\",\n    \"company_name\": \"机构名称\",\n    \"position\": \"职位理财师\",\n    \"work_year\": 1,\n    \"industry\": 3,\n    \"personal_statistic\": {     # 个人配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    },\n    \"org_statistic\": {          # 机构配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    }\n}",
+          "content": "{\n    \"name\": \"王伟强\",\n    \"avatar\": \"http://www.xsadas.jpg\",\n    \"certification_status\": 1,  # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"certification_info\": {\n        \"company_name\": \"机构名称\",\n        \"position\": \"职位理财师\",\n        \"work_year\": 1,\n        \"industry\": 3,\n    },\n    \"personal_statistic\": {     # 个人配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    },\n    \"org_statistic\": {          # 机构配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    }\n}",
           "type": "json"
         }
       ]
@@ -1406,6 +1530,45 @@ define({ "api": [
     "url": "/api/user/customers",
     "title": "客户列表",
     "name": "UserCustomers",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"name\": \"张东\",\n    \"total_invest_product_count\": 33,   # 累计配置产品数\n    \"existence_invest_product_count\": 1,    # 存续产品数\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"total_existence_invest_rmb\": 33,   # 存续人民币/万\n    \"total_existence_invest_dollar\": 999,   #存续美金/万\n    \"last_invest_time\": \"2017-12-01\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p> "
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/api/user/customers/id_card",
+    "title": "客户身份证信息",
+    "name": "UserCustomersIDCard",
     "group": "User",
     "parameter": {
       "fields": {
