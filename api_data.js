@@ -542,7 +542,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"id\": 1,\n    \"read\": false,\n    \"type\": 1,          # 通知类型,1:普通(不跳转), 2:订单, 3:产品, 4:认证\n    \"resource_id\": \"100932\",\n    \"msg_list\": [{\n        \"type\": 3,          # 信息类型, 1:文本, 2:产品\n        \"text\": \"年后\",\n        \"resource_id\": \"22333\"\n    }]\n}]",
+          "content": "[{\n    \"date\": \"2017-4-2\",\n    \"data\": [{\n        \"id\": 1,\n        \"read\": false,\n        \"type\": 1,          # 通知类型,1:普通(不跳转), 2:订单, 3:产品, 4:认证\n        \"resource_id\": \"100932\",\n        \"msg_list\": [{\n            \"type\": 3,          # 信息类型, 1:文本, 2:产品\n            \"text\": \"年后\",\n            \"resource_id\": \"22333\"\n        }]\n    }]\n}]",
           "type": "json"
         }
       ]
