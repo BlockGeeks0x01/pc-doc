@@ -231,6 +231,13 @@
             "optional": false,
             "field": "140013",
             "description": "<p>无法邀请其他机构的旗下理财师</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140014",
+            "description": "<p>邀请已取消</p> "
           }
         ]
       }
@@ -1203,6 +1210,16 @@
   },
   {
     "type": "post",
+    "url": "/api/user/invite/:id/accept",
+    "title": "接受邀请",
+    "name": "AcceptInvite",
+    "group": "User",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
     "url": "/api/user/unfreeze_apply",
     "title": "申请解冻",
     "name": "ApplyUnfreeze",
@@ -1346,6 +1363,16 @@
       ]
     },
     "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/invite/:id/check",
+    "title": "邀请检查",
+    "name": "InviteCheck",
+    "group": "User",
+    "version": "1.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
@@ -1522,6 +1549,16 @@
   },
   {
     "type": "post",
+    "url": "/api/user/invite/:id/reject",
+    "title": "拒绝邀请",
+    "name": "RejectInvite",
+    "group": "User",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
     "url": "/api/user/password/reset",
     "title": "忘记密码",
     "name": "ResetPassword",
@@ -1609,6 +1646,29 @@
             "optional": false,
             "field": "work_year",
             "description": "<p>年限</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/api/user/profile",
+    "title": "修改当前用户信息",
+    "name": "UpdateUserProfile",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": true,
+            "field": "avatar",
+            "description": "<p>头像</p> "
           }
         ]
       }
@@ -1748,7 +1808,7 @@
   {
     "type": "get",
     "url": "/api/user/profile",
-    "title": "获取用户信息",
+    "title": "获取当前用户信息",
     "name": "UserProfile",
     "group": "User",
     "success": {
