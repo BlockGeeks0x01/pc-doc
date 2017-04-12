@@ -1755,7 +1755,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100094,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"subscription_order_count\": 12,     # 待审核订单\n    \"contract_order_count\": 13,         # 待合同邮寄订单\n    \"declaration_order_count\": 23,      # 待资料报单订单\n    \"return_contract_order_count\": 99,  # 待合同寄还订单\n    \"confirm_order_count\": 19,          # 待分成确认订单\n    \"unread_notifications\": 33,         # 未读消息数\n}",
+          "content": "{\n    \"user_id\": 100094,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n}",
           "type": "json"
         }
       ]
