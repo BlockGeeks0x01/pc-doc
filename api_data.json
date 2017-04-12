@@ -1332,8 +1332,8 @@
   },
   {
     "type": "get",
-    "url": "/api/user/certificate/:user_id",
-    "title": "获取某个用户的认证信息",
+    "url": "/api/user/certificate/:id",
+    "title": "获取某个认证信息",
     "name": "GetOneUserCertificate",
     "group": "User",
     "success": {
@@ -1444,7 +1444,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n}]",
+          "content": "[{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n}]",
           "type": "json"
         }
       ]
@@ -1582,8 +1582,8 @@
   },
   {
     "type": "put",
-    "url": "/api/user/certificate/:user_id",
-    "title": "修改某个用户的认证信息",
+    "url": "/api/user/certificate/:id",
+    "title": "修改某个认证信息",
     "name": "UpdateOneUserCertificate",
     "group": "User",
     "parameter": {
@@ -1665,7 +1665,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"name\": \"王伟强\",\n    \"avatar\": \"http://www.xsadas.jpg\",\n    \"certification_status\": 1,  # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"certification_info\": {\n        \"company_name\": \"机构名称\",\n        \"position\": \"职位理财师\",\n        \"work_year\": 1,\n        \"industry\": 3,\n    },\n    \"personal_statistic\": {     # 个人配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    },\n    \"org_statistic\": {          # 机构配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    }\n}",
+          "content": "{\n    \"user_id\": 100409,\n    \"name\": \"王伟强\",\n    \"avatar\": \"http://www.xsadas.jpg\",\n    \"certification_status\": 1,  # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"certification_info\": {\n        \"company_name\": \"机构名称\",\n        \"position\": \"职位理财师\",\n        \"work_year\": 1,\n        \"industry\": 3,\n    },\n    \"personal_statistic\": {     # 个人配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    },\n    \"org_statistic\": {          # 机构配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    }\n}",
           "type": "json"
         }
       ]
