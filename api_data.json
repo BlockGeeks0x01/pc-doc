@@ -182,6 +182,55 @@
             "optional": false,
             "field": "140006",
             "description": "<p>当前有待处理的认证审核</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140007",
+            "description": "<p>不是管理员</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140008",
+            "description": "<p>管理员无法退出机构</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140009",
+            "description": "<p>用户已加入机构</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140010",
+            "description": "<p>不能重复邀请</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140011",
+            "description": "<p>无法邀请管理员</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140012",
+            "description": "<p>无法邀请自己的旗下理财师</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140013",
+            "description": "<p>无法邀请其他机构的旗下理财师</p> "
           }
         ]
       }
@@ -549,7 +598,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"date\": \"2017-4-2\",\n    \"data\": [{\n        \"id\": 1,\n        \"read\": false,\n        \"type\": 1,          # 通知类型,1:普通(不跳转), 2:订单, 3:产品, 4:认证\n        \"resource_id\": \"100932\",\n        \"msg_list\": [{\n            \"type\": 3,          # 信息类型, 1:文本, 2:产品\n            \"text\": \"年后\",\n            \"resource_id\": \"22333\"\n        }]\n    }]\n}]",
+          "content": "[{\n    \"date\": \"2017-4-2\",\n    \"data\": [{\n        \"id\": 1,\n        \"read\": false,\n        \"type\": 1,          # 通知类型,1:普通(不跳转), 2:订单, 3:产品, 4:认证未通过, 5:邀请\n        \"resource_id\": \"100932\",\n        \"msg_list\": [{\n            \"type\": 3,          # 信息类型, 1:文本, 2:产品\n            \"text\": \"年后\",\n            \"resource_id\": \"22333\"\n        }]\n    }]\n}]",
           "type": "json"
         }
       ]
@@ -1265,7 +1314,7 @@
   {
     "type": "get",
     "url": "/api/user/certificate",
-    "title": "获取认证信息",
+    "title": "获取当前用户认证信息",
     "name": "GetCertificate",
     "group": "User",
     "success": {
@@ -1278,6 +1327,69 @@
       ]
     },
     "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/certificate/:user_id",
+    "title": "获取某个用户的认证信息",
+    "name": "GetOneUserCertificate",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"name\": \"小明\",\n    \"position\": \"职位理财师\",\n    \"work_year\": 1,\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/api/user/invite",
+    "title": "邀请用户",
+    "name": "InviteUser",
+    "group": "User",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>手机号</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "position",
+            "description": "<p>职位</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "work_year",
+            "description": "<p>从业年限</p> "
+          }
+        ]
+      }
+    },
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
@@ -1332,7 +1444,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n}",
+          "content": "[{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n}]",
           "type": "json"
         }
       ]
@@ -1460,6 +1572,43 @@
             "optional": false,
             "field": "is_default",
             "description": "<p>是否默认</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "put",
+    "url": "/api/user/certificate/:user_id",
+    "title": "修改某个用户的认证信息",
+    "name": "UpdateOneUserCertificate",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "position",
+            "description": "<p>职位</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "work_year",
+            "description": "<p>年限</p> "
           }
         ]
       }
