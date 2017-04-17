@@ -1626,19 +1626,6 @@ define({ "api": [
     "title": "修改地址默认状态",
     "name": "UpdateAddress",
     "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>bool</p> ",
-            "optional": false,
-            "field": "is_default",
-            "description": "<p>是否默认</p> "
-          }
-        ]
-      }
-    },
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
