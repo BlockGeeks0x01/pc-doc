@@ -915,6 +915,25 @@
     "groupTitle": "Order"
   },
   {
+    "type": "get",
+    "url": "/api/orders/todo_stats",
+    "title": "待办订单统计",
+    "name": "OrderStats",
+    "group": "Order",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"waiting_admin_confirm\": 12,  # 待审核订单\n    \"waiting_ask_for_contract\": 99,   # 待申领合同\n    \"waiting_declaration\": 9,   # 待资料报单\n    \"waiting_return_contract\": 34,  # 待合同寄还\n    \"waiting_confirm_profit\": 2,    # 待分成确认\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
     "type": "post",
     "url": "/api/orders/:order_no/contract/scanning_copy",
     "title": "上传合同扫描件",
