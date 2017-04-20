@@ -10,13 +10,14 @@ define({
     "Product",
     "Order",
     "Notification",
+    "Config",
     "File"
   ],
   "sampleUrl": false,
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-04-20T10:59:31.814Z",
+    "time": "2017-04-20T11:00:11.430Z",
     "url": "http://apidocjs.com",
     "version": "0.13.1"
   }
