@@ -1,6 +1,25 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/api/config/banner",
+    "title": "Banner页",
+    "name": "Banner",
+    "group": "Config",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"image\": \"http://dsadsadsa.png\",\n    \"link_type\": 18,    # 18 联合采购系统产品\n    \"resource_id\": 33,  # 跳转ID\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/config.py",
+    "groupTitle": "Config"
+  },
+  {
+    "type": "get",
     "url": "/",
     "title": "错误码",
     "name": "ErrorCode",
@@ -1769,7 +1788,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100409,\n    \"name\": \"王伟强\",\n    \"avatar\": \"http://www.xsadas.jpg\",\n    \"certification_status\": 1,  # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"certification_info\": {\n        \"company_name\": \"机构名称\",\n        \"position\": \"职位理财师\",\n        \"work_year\": 1,\n        \"industry\": 3,\n    },\n    \"personal_statistic\": {     # 个人配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    },\n    \"org_statistic\": {          # 机构配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income\": 333.33,       # 累计分成\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    }\n}",
+          "content": "{\n    \"user_id\": 100409,\n    \"name\": \"王伟强\",\n    \"avatar\": \"http://www.xsadas.jpg\",\n    \"certification_status\": 1,  # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"is_admin\": true,\n    \"certification_info\": {\n        \"company_name\": \"机构名称\",\n        \"position\": \"职位理财师\",\n        \"work_year\": 1,\n        \"industry\": 3,\n    },\n    \"personal_statistic\": {     # 个人配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income_rmb\": 333.33,       # 累计分成人民币\n        \"income_dollar\": 333.33,       # 累计分成美元\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    },\n    \"org_statistic\": {          # 机构配置统计\n        \"finished_order_count\": 12, # 累计成交订单\n        \"customer_count\": 3,    # 累计客户\n        \"income_rmb\": 333.33,       # 累计分成人民币\n        \"income_dollar\": 333.33,       # 累计分成美元\n        \"total_invest_rmb\": 33, # 累计配置人民币\n        \"total_invest_dollar\": 999, # 累计配置美元\n    }\n}",
           "type": "json"
         }
       ]
@@ -1859,7 +1878,72 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100094,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n}",
+          "content": "{\n    \"user_id\": 100094,\n    \"is_admin\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/profit",
+    "title": "采购分成列表",
+    "name": "UserProfitList",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "finished",
+            "description": "<p>是否已打款, 1:是, 0否</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>int</p> ",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"order_no\": \"83092180982193012\",\n    \"product_name\": \"产品名称A\",\n    \"product_id\": 33,\n    \"amount\": 33,\n    \"currency\": 1,  # 1 人民币,2:美金\n    \"estimated_time\": \"2015-12-11\",     # 预计打款时间\n    \"actual_time\": \"2015-12-11\",     # 实际打款时间\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/profit/summary",
+    "title": "采购分成",
+    "name": "UserProfitSummary",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"total\": {\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    },\n    \"waiting\": {        # 待打款\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    },\n    \"finished\": {       # 已打款\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    }\n}",
           "type": "json"
         }
       ]
