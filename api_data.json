@@ -252,6 +252,13 @@
             "optional": false,
             "field": "140014",
             "description": "<p>邀请已取消</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "140015",
+            "description": "<p>无法删除非在职人员</p> "
           }
         ]
       }
@@ -1369,6 +1376,16 @@
     "groupTitle": "User"
   },
   {
+    "type": "delete",
+    "url": "/api/user/org/members/:id",
+    "title": "删除机构成员",
+    "name": "DeleteOrgMembers",
+    "group": "User",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
     "type": "get",
     "url": "/api/user/certificate",
     "title": "获取当前用户认证信息",
@@ -1511,7 +1528,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n}]",
+          "content": "[{\n    \"id\": 2,\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n}]",
           "type": "json"
         }
       ]
