@@ -1878,7 +1878,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100094,\n    \"is_admin\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n}",
+          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n}",
           "type": "json"
         }
       ]
