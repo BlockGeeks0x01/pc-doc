@@ -413,6 +413,13 @@
             "optional": false,
             "field": "117",
             "description": "<p>订单结束</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>int</p> ",
+            "optional": false,
+            "field": "118",
+            "description": "<p>等待麦策确认分成</p> "
           }
         ]
       }
