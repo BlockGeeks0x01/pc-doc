@@ -11,13 +11,14 @@
     "Order",
     "Notification",
     "Config",
-    "File"
+    "File",
+    "Feedback"
   ],
   "sampleUrl": false,
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-04-24T12:07:15.230Z",
+    "time": "2017-04-25T09:15:25.817Z",
     "url": "http://apidocjs.com",
     "version": "0.13.1"
   }
