@@ -855,7 +855,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n    \"actual_pay_time\": \"2017-12-1\",     # 实际打款日期\n    \"customer_id_card_no\": \"3332132132132\", # 身份证号\n    \"pay_pic\": \"/api/file/3\",   # 打款凭证\n    \"front_of_id_pic\": \"/api/file/5\",   # 身份证正面\n    \"back_of_id_pic\": \"/api/file/33\",   # 身份证背面\n}",
+          "content": "{\n    \"actual_pay_time\": \"2017-12-1\",     # 实际打款日期\n    \"customer_id_card_no\": \"3332132132132\", # 身份证号\n    \"pay_pic\": \"/api/file/3\",   # 打款凭证\n    \"bank_card_pic\": \"/api/file/4\",     # 银行卡照片\n    \"front_of_id_pic\": \"/api/file/5\",   # 身份证正面\n    \"back_of_id_pic\": \"/api/file/33\",   # 身份证背面\n}",
           "type": "json"
         }
       ]
