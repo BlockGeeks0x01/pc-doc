@@ -9,7 +9,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"image\": \"http://dsadsadsa.png\",\n    \"link_type\": 18,    # 18 联合采购系统产品\n    \"resource_id\": 33,  # 跳转ID\n}]",
+          "content": "[{\n    \"image\": \"http://dsadsadsa.png\",\n    \"link\": \"http://dsadsadsa.png\"\n}]",
           "type": "json"
         }
       ]
