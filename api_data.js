@@ -1512,6 +1512,25 @@ define({ "api": [
     "groupTitle": "User"
   },
   {
+    "type": "get",
+    "url": "/api/user/invite/exist",
+    "title": "是否存在待处理邀请",
+    "name": "InviteExist",
+    "group": "User",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "true/false",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
     "type": "post",
     "url": "/api/user/invite",
     "title": "邀请用户",
@@ -1828,7 +1847,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"type\": 1,  # 账户类型,1:个人, 2:对公\n    \"account_name\": \"账户名\",\n    \"account\": \"账号\",\n    \"bank_name\": \"开户行\",\n    \"back_of_card_pic\": \"银行卡背面照片地址\"\n}",
+          "content": "{\n    \"account_type\": 1,  # 账户类型,1:个人, 2:对公\n    \"account_name\": \"账户名\",\n    \"account\": \"账号\",\n    \"bank_name\": \"开户行\",\n    \"back_of_card_pic\": \"银行卡背面照片地址\"\n}",
           "type": "json"
         }
       ]
