@@ -1885,7 +1885,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"name\": \"张东\",\n    \"total_invest_product_count\": 33,   # 累计配置产品数\n    \"existence_invest_product_count\": 1,    # 存续产品数\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"total_existence_invest_rmb\": 33,   # 存续人民币/万\n    \"total_existence_invest_dollar\": 999,   #存续美金/万\n    \"last_invest_time\": \"2017-12-01\"\n}]",
+          "content": "[{\n    \"name\": \"张东\",\n    \"total_invest_product_count\": 33,   # 累计配置产品数\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"last_invest_time\": \"2017-12-01\"\n}]",
           "type": "json"
         }
       ]
