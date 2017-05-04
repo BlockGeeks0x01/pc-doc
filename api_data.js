@@ -1688,7 +1688,7 @@ define({ "api": [
             "type": "<p>int</p> ",
             "optional": false,
             "field": "account_type",
-            "description": "<h1>账户类型,1:个人, 2:对公</h1> "
+            "description": "<p>账户类型,1:个人, 2:对公</p> "
           },
           {
             "group": "Parameter",
@@ -1696,6 +1696,13 @@ define({ "api": [
             "optional": false,
             "field": "account_name",
             "description": "<p>账户名</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>string</p> ",
+            "optional": false,
+            "field": "account_no",
+            "description": "<p>账号</p> "
           },
           {
             "group": "Parameter",
@@ -1918,7 +1925,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"account_type\": 1,  # 账户类型,1:个人, 2:对公\n    \"account_name\": \"账户名\",\n    \"account\": \"账号\",\n    \"bank_name\": \"开户行\",\n\n    \"total\": {\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    },\n    \"waiting\": {        # 待打款\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    },\n    \"finished\": {       # 已打款\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    }\n}",
+          "content": "{\n    \"account_type\": 1,  # 账户类型,1:个人, 2:对公\n    \"account_name\": \"账户名\",\n    \"account_no\": \"账号\",\n    \"bank_name\": \"开户行\",\n\n    \"total\": {\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    },\n    \"waiting\": {        # 待打款\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    },\n    \"finished\": {       # 已打款\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    }\n}",
           "type": "json"
         }
       ]
