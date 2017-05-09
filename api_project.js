@@ -15,11 +15,12 @@ define({
     "Feedback"
   ],
   "sampleUrl": false,
-  "apidoc": "0.2.0",
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-05-04T11:52:09.602Z",
+    "time": "2017-05-09T10:06:40.768Z",
     "url": "http://apidocjs.com",
-    "version": "0.13.1"
+    "version": "0.17.5"
   }
 });
