@@ -499,6 +499,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "int",
             "optional": false,
+            "field": "4",
+            "description": "<p>募集结束</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
             "field": "-1",
             "description": "<p>已关闭</p>"
           }
