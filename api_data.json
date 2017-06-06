@@ -1086,9 +1086,16 @@
           {
             "group": "Parameter",
             "type": "int",
-            "optional": false,
+            "optional": true,
             "field": "status",
             "description": "<p>产品状态 1:观察中,2:采购中,3:往期产品</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": "<p>产品名称</p>"
           },
           {
             "group": "Parameter",
