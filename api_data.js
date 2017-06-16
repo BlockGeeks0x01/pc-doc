@@ -517,6 +517,50 @@ define({ "api": [
     "groupTitle": "Constant"
   },
   {
+    "type": "get",
+    "url": "/",
+    "title": "用户角色",
+    "name": "Role",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "20",
+            "description": "<p>创始人</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "21",
+            "description": "<p>管理员</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "22",
+            "description": "<p>产品管理员</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "23",
+            "description": "<p>理财师</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
     "type": "post",
     "url": "/api/feedback",
     "title": "用户反馈",
@@ -876,6 +920,20 @@ define({ "api": [
             "optional": true,
             "field": "product_id",
             "description": "<p>产品ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "customer_id",
+            "description": "<p>客户ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "existence",
+            "description": "<p>存续类型 0:已结束1:存续中</p>"
           },
           {
             "group": "Parameter",
@@ -1467,6 +1525,13 @@ define({ "api": [
             "optional": false,
             "field": "work_year",
             "description": "<p>从业年限</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "role",
+            "description": "<p>角色</p>"
           }
         ]
       }
@@ -1516,6 +1581,16 @@ define({ "api": [
     "groupTitle": "User"
   },
   {
+    "type": "post",
+    "url": "/api/user/org/members/:id/quit",
+    "title": "辞退用户",
+    "name": "MemberQuit",
+    "group": "User",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
     "type": "get",
     "url": "/api/user/org/members",
     "title": "机构成员",
@@ -1525,7 +1600,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"id\": 2,\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n}]",
+          "content": "[{\n    \"id\": 2,\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n    \"role\": 20              # 用户角色\n}]",
           "type": "json"
         }
       ]
@@ -1553,6 +1628,25 @@ define({ "api": [
         ]
       }
     }
+  },
+  {
+    "type": "get",
+    "url": "/api/user/org/members/:id",
+    "title": "机构成员详情",
+    "name": "OrgMembersDetail",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"work_year\": 1,\n    \"role\": 20              # 角色(20创始人, 21管理员, 22产品管理员, 23理财师)\n    \"product_count\": {\n        \"total\"： 25,    # 已配置产品\n        \"continue\": 22  # 存续产品\n    },\n    \"customer_count\": {\n        \"total\": 33,    # 已服务客户数\n        \"continue\": 22, # 存续客户数\n    },\n    \"order_amount\": {\n        \"total\": {      # 配置金额\n            \"rmb\": 999,\n            \"dollar\": 999\n        },\n        \"continue\": {   # 存续金额\n            \"rmb\": 999,\n            \"dollar\": 999\n        }\n    },\n    \"maice_order_count\": 12,    # 已成交麦策订单\n    \"income\": {         # 已赚取分成\n        \"rmb\": 12000,\n        \"dollar\": 999\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
   },
   {
     "type": "post",
@@ -1687,6 +1781,13 @@ define({ "api": [
             "optional": false,
             "field": "work_year",
             "description": "<p>年限</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "role",
+            "description": ""
           }
         ]
       }
@@ -1802,25 +1903,39 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/user/customers",
-    "title": "客户列表",
-    "name": "UserCustomers",
+    "url": "/api/user/customers/:id",
+    "title": "客户详情",
+    "name": "UserCustomerDetail",
     "group": "User",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"name\": \"张东\",\n    \"total_invest_product_count\": 33,   # 累计配置产品数\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"last_invest_time\": \"2017-12-01\"\n}]",
+          "content": "{\n    \"name\": \"张东\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"first_invest_time\": \"2017-12-16\",\n    \"remark\": \"备注\",\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"continue_invest_rmb\": 33,  # 存续人民币\n    \"continue_invest_dollar\": 33,   # 存续美元\n}",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/customers",
+    "title": "客户列表",
+    "name": "UserCustomers",
+    "group": "User",
     "parameter": {
       "fields": {
         "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "type",
+            "description": "<p>客户类型,-1未分类</p>"
+          },
           {
             "group": "Parameter",
             "type": "int",
@@ -1837,7 +1952,19 @@ define({ "api": [
           }
         ]
       }
-    }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
   },
   {
     "type": "get",
@@ -1863,6 +1990,25 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "[{\n    \"name\": \"张东\",\n    \"id_card_no\": \"330905199704860582\",     # 身份证号\n    \"front_of_id_pic\": \"/api/file/3\",       # 身份证正面\n    \"back_of_id_pic\": \"/api/file/34\"        # 身份证背面\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/customers/types",
+    "title": "客户类型",
+    "name": "UserCustomersTypes",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"id\": 1,\n    \"text\": \"VIP\"\n}]",
           "type": "json"
         }
       ]
