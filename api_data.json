@@ -1402,6 +1402,60 @@
     "groupTitle": "User"
   },
   {
+    "type": "get",
+    "url": "/api/user/customers",
+    "title": "客户列表",
+    "name": "Customers",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "type",
+            "description": "<p>客户类型,-1未分类</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "org",
+            "defaultValue": "0",
+            "description": "<p>是否查看整个机构客户0:否，1:是</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"product_count\": 3  # 产品数量\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
     "type": "delete",
     "url": "/api/user/address/:id",
     "title": "删除地址",
@@ -1600,7 +1654,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"id\": 2,\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"finished_order_count\": 3,  # 已成交订单\n    \"income\": 300,          # 分成\n    \"role\": 20              # 用户角色\n}]",
+          "content": "[{\n    \"id\": 2,\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"work_year\": 3,\n    \"role\": 20              # 用户角色\n    \"total_amount\": {   # 累计成交金额\n        \"rmb\": 100,\n        \"dollar\": 199\n    }\n}]",
           "type": "json"
         }
       ]
@@ -1639,7 +1693,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"work_year\": 1,\n    \"role\": 20              # 角色(20创始人, 21管理员, 22产品管理员, 23理财师)\n    \"product_count\": {\n        \"total\"： 25,    # 已配置产品\n        \"continue\": 22  # 存续产品\n    },\n    \"customer_count\": {\n        \"total\": 33,    # 已服务客户数\n        \"continue\": 22, # 存续客户数\n    },\n    \"order_amount\": {\n        \"total\": {      # 配置金额\n            \"rmb\": 999,\n            \"dollar\": 999\n        },\n        \"continue\": {   # 存续金额\n            \"rmb\": 999,\n            \"dollar\": 999\n        }\n    },\n    \"maice_order_count\": 12,    # 已成交麦策订单\n    \"income\": {         # 已赚取分成\n        \"rmb\": 12000,\n        \"dollar\": 999\n    }\n}",
+          "content": "{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"work_year\": 1,\n    \"role\": 20              # 角色(20创始人, 21管理员, 22产品管理员, 23理财师)\n    \"order_count\": {\n        \"org\": 12,  # 机构\n        \"maice\": 12 # 麦策\n    },\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"customer_count\": {\n        \"total\": 3,\n        \"existence\": 5, # 存续客户数\n    },\n    \"order_amount\": {\n        \"total\": {  # 总配置\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        },\n        \"existence\": {  #  存续\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        }\n    },\n    \"income\": {         # 已赚取分成\n        \"finished\": {\n            \"rmb\": 0,\n            \"dollar\": 99\n        },\n        \"waiting\": {\n            \"rmb\": 0,\n            \"dollar\": 99\n        }\n    }\n}",
           "type": "json"
         }
       ]
@@ -1797,6 +1851,50 @@
     "groupTitle": "User"
   },
   {
+    "type": "put",
+    "url": "/api/user/org/members/:id",
+    "title": "更新机构成员",
+    "name": "UpdateOrgMembers",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "position",
+            "description": "<p>职位</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "work_year",
+            "description": "<p>从业年限</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "role",
+            "description": "<p>角色</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
     "type": "post",
     "url": "/api/user/bank_account",
     "title": "更新银行账户信息",
@@ -1922,52 +2020,6 @@
   },
   {
     "type": "get",
-    "url": "/api/user/customers",
-    "title": "客户列表",
-    "name": "UserCustomers",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "type",
-            "description": "<p>客户类型,-1未分类</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "page",
-            "description": "<p>第几页</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "per_page",
-            "description": "<p>每页数量</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "[{\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n}]",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
-  },
-  {
-    "type": "get",
     "url": "/api/user/customers/id_card",
     "title": "客户身份证信息",
     "name": "UserCustomersIDCard",
@@ -2027,7 +2079,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"is_org_member\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n    \"org_member_count\": 3               # 旗下理财师人数\n}",
+          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"is_org_member\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n    \"org_member_count\": 3,              # 旗下理财师人数\n    \"role\": 21                          # 角色\n}",
           "type": "json"
         }
       ]
