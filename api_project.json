@@ -7,6 +7,7 @@
     "Constant",
     "Structure",
     "User",
+    "Customer",
     "Product",
     "Order",
     "Notification",
@@ -19,7 +20,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-06-27T08:33:41.235Z",
+    "time": "2017-06-27T09:23:33.604Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }

@@ -562,6 +562,123 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/api/customers",
+    "title": "创建客户",
+    "name": "CreateCustomer",
+    "group": "Customer",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "type_id",
+            "description": "<p>类型ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>备注</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "get",
+    "url": "/api/customers/:id",
+    "title": "客户详情",
+    "name": "CustomerDetail",
+    "group": "Customer",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"no\": \"8302183921889301\",  # 客户编号\n    \"name\": \"张东\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"first_invest_time\": \"2017-12-16\",\n    \"last_invest_time\": \"2017-11-16\",\n    \"remark\": \"备注\",\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"profit\": {     # 收益\n        \"total\": {  # 账面收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"finished\": {   # 已分配收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"existence_percent_by_profit_type\": {\n        \"fixed\": 0.12,\n        \"float\": 0.88\n    },\n    \"existence_percent_by_currency\": {\n        \"rmb\": 0.9,\n        \"dollar\": 0.1\n    },\n    \"existence_percent_by_strategy\": {\n        \"主观多空\": 0.8,\n        \"其他\": 0.2\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "get",
+    "url": "/api/customers",
+    "title": "客户列表",
+    "name": "CustomersList",
+    "group": "Customer",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "type",
+            "description": "<p>客户类型,-1未分类</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "org",
+            "defaultValue": "0",
+            "description": "<p>是否查看整个机构客户0:否，1:是</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": "<p>客户姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"id\": 3,\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"product_count\": 3  # 产品数量\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "post",
     "url": "/api/feedback",
     "title": "用户反馈",
     "name": "CreateFeedback",
@@ -1407,27 +1524,7 @@ define({ "api": [
       ]
     },
     "filename": "../purchasing_consortia/frontend/product.py",
-    "groupTitle": "Product",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "page",
-            "description": "<p>第几页</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "per_page",
-            "description": "<p>每页数量</p>"
-          }
-        ]
-      }
-    }
+    "groupTitle": "Product"
   },
   {
     "type": "get",
@@ -1733,67 +1830,6 @@ define({ "api": [
           }
         ]
       }
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
-  },
-  {
-    "type": "get",
-    "url": "/api/user/customers",
-    "title": "客户列表",
-    "name": "Customers",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "type",
-            "description": "<p>客户类型,-1未分类</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "org",
-            "defaultValue": "0",
-            "description": "<p>是否查看整个机构客户0:否，1:是</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "name",
-            "description": "<p>客户姓名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "page",
-            "description": "<p>第几页</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "per_page",
-            "description": "<p>每页数量</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "[{\n    \"id\": 3,\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"product_count\": 3  # 产品数量\n}]",
-          "type": "json"
-        }
-      ]
     },
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
@@ -2345,25 +2381,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/user/customers/:id",
-    "title": "客户详情",
-    "name": "UserCustomerDetail",
-    "group": "User",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"no\": \"8302183921889301\",  # 客户编号\n    \"name\": \"张东\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"first_invest_time\": \"2017-12-16\",\n    \"last_invest_time\": \"2017-11-16\",\n    \"remark\": \"备注\",\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"profit\": {     # 收益\n        \"total\": {  # 账面收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"finished\": {   # 已分配收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"existence_percent_by_profit_type\": {\n        \"fixed\": 0.12,\n        \"float\": 0.88\n    },\n    \"existence_percent_by_currency\": {\n        \"rmb\": 0.9,\n        \"dollar\": 0.1\n    },\n    \"existence_percent_by_strategy\": {\n        \"主观多空\": 0.8,\n        \"其他\": 0.2\n    }\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
-  },
-  {
-    "type": "get",
     "url": "/api/user/customers/id_card",
     "title": "客户身份证信息",
     "name": "UserCustomersIDCard",
@@ -2396,7 +2413,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/user/customers/types",
+    "url": "/api/customers/types",
     "title": "客户类型",
     "name": "UserCustomersTypes",
     "group": "User",
@@ -2410,7 +2427,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "../purchasing_consortia/frontend/customers.py",
     "groupTitle": "User"
   },
   {
