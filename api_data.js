@@ -581,8 +581,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "int",
             "optional": false,
-            "field": "type_id",
-            "description": "<p>类型ID</p>"
+            "field": "type",
+            "description": "<p>类型</p>"
           },
           {
             "group": "Parameter",
@@ -961,6 +961,92 @@ define({ "api": [
           "type": "json"
         }
       ]
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "post",
+    "url": "/api/orders/org",
+    "title": "创建机构产品订单",
+    "name": "CreateOrgOrders",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "product_id",
+            "description": "<p>产品ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "customer_no",
+            "description": "<p>客户编号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "datetime",
+            "optional": false,
+            "field": "buy_time",
+            "description": "<p>&quot;2016-03-02T16:00:00&quot;</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "float",
+            "optional": true,
+            "field": "prospective_earning",
+            "description": "<p>预期年化收益</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "datetime",
+            "optional": true,
+            "field": "expire_time",
+            "description": "<p>到期时间</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "buy_duration",
+            "description": "<p>购买期限</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "float",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>金额</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "float",
+            "optional": true,
+            "field": "buy_value",
+            "description": "<p>购买时净值</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "float",
+            "optional": true,
+            "field": "buy_share",
+            "description": "<p>份额</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>备注</p>"
+          }
+        ]
+      }
     },
     "filename": "../purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
