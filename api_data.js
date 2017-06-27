@@ -1091,6 +1091,36 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/api/products/:pid/values",
+    "title": "创建产品净值",
+    "name": "CreateProductValues",
+    "group": "Product",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "float",
+            "optional": false,
+            "field": "total_value",
+            "description": "<p>累计净值</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "datetime",
+            "optional": false,
+            "field": "update_time",
+            "description": "<p>更新时间</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "post",
     "url": "/api/products/:pid/follow",
     "title": "关注/取消关注产品",
     "name": "FollowProduct",
@@ -1409,6 +1439,46 @@ define({ "api": [
     "name": "UpdateProduct",
     "group": "Product",
     "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "delete",
+    "url": "/api/products/:pid/values/:id",
+    "title": "删除产品净值",
+    "name": "deleteProductValues",
+    "group": "Product",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "put",
+    "url": "/api/products/:pid/values/:id",
+    "title": "更新产品净值",
+    "name": "updateProductValues",
+    "group": "Product",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "float",
+            "optional": false,
+            "field": "total_value",
+            "description": "<p>累计净值</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "datetime",
+            "optional": false,
+            "field": "update_time",
+            "description": "<p>更新时间</p>"
+          }
+        ]
+      }
+    },
     "filename": "../purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
