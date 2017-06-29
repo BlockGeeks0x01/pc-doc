@@ -974,6 +974,36 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/api/orders/:order_no/distributions",
+    "title": "创建订单分配记录",
+    "name": "CreateOrderDistribution",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>金额</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "datetime",
+            "optional": false,
+            "field": "bonus_time",
+            "description": "<p>赎回生效日期</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "post",
     "url": "/api/orders/:order_no/redeem",
     "title": "创建订单赎回记录",
     "name": "CreateOrderRedeem",
@@ -1140,11 +1170,30 @@ define({ "api": [
   },
   {
     "type": "delete",
+    "url": "/api/orders/:order_no/distributions/:id",
+    "title": "删除订单分配记录",
+    "name": "DeleteOrderDistribution",
+    "group": "Order",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "delete",
     "url": "/api/orders/:order_no/redeem/:id",
     "title": "删除订单赎回记录",
     "name": "DeleteOrderRedeem",
     "group": "Order",
     "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "1.34    # 剩余份额",
+          "type": "json"
+        }
+      ]
+    },
     "filename": "../purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
@@ -1184,6 +1233,45 @@ define({ "api": [
           "type": "json"
         }
       ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/api/orders/:order_no/distributions",
+    "title": "订单分配记录",
+    "name": "OrderDistribution",
+    "group": "Order",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"id\": 1,\n    \"amount\": 13,   # 金额\n    \"bonus_time\": \"2017-01-01T17:00:00\",   # 赎回生效日\n    \"finished\": true,   # 已分配\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p>"
+          }
+        ]
+      }
     }
   },
   {
@@ -1270,7 +1358,27 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/order.py",
-    "groupTitle": "Order"
+    "groupTitle": "Order",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "get",
@@ -1336,6 +1444,36 @@ define({ "api": [
         }
       ]
     }
+  },
+  {
+    "type": "put",
+    "url": "/api/orders/:order_no/distributions/:id",
+    "title": "更新订单分配记录",
+    "name": "UpdateOrderDistribution",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>金额</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "datetime",
+            "optional": false,
+            "field": "bonus_time",
+            "description": "<p>赎回生效日期</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
   },
   {
     "type": "put",
