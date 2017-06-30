@@ -1874,6 +1874,25 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/api/products/org/:id/stats",
+    "title": "机构产品数据统计(用户维度)",
+    "name": "OrgProductStats",
+    "group": "Product",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"currency\": 1,   # 货币类型\n    \"orders\": 21,      # 单量\n    \"customers\": 2 # 客户\n    \"total_amount\": 23,             # 累计金额\n    \"existence_amount\": 11,   # 存续金额\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "get",
     "url": "/api/products/org",
     "title": "机构的产品列表",
     "name": "OrgProducts",
@@ -2191,6 +2210,25 @@ define({ "api": [
     "name": "UpdateProduct",
     "group": "Product",
     "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "get",
+    "url": "/api/products/:id/stats",
+    "title": "单个产品数据统计(用户维度)",
+    "name": "UserProductStats",
+    "group": "Product",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"currency\": 1,   # 货币类型\n    \"orders\": 21,      # 单量\n    \"customers\": 2 # 客户\n    \"total_amount\": 23,             # 累计金额\n    \"existence_amount\": 11,   # 存续金额\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
