@@ -607,22 +607,18 @@
   {
     "type": "post",
     "url": "/api/customers/types",
-    "title": "创建客户类型",
+    "title": "编辑客户类型",
     "name": "CreateCustomersTypes",
     "group": "Customer",
     "version": "1.0.0",
     "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "text",
-            "description": "<p>类型名称</p>"
-          }
-        ]
-      }
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "[{\n    \"id\": 1,\n    \"text\": \"客户类型\",\n}]",
+          "type": "json"
+        }
+      ]
     },
     "filename": "../purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
@@ -699,6 +695,25 @@
         {
           "title": "Success-Response:",
           "content": "[{\n    \"id\": 3,\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"product_count\": 3  # 产品数量\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "get",
+    "url": "/api/customers/types",
+    "title": "客户类型",
+    "name": "CustomersTypes",
+    "group": "Customer",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"id\": 1,\n    \"text\": \"VIP\"\n}]",
           "type": "json"
         }
       ]
@@ -3209,25 +3224,6 @@
     },
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
-  },
-  {
-    "type": "get",
-    "url": "/api/customers/types",
-    "title": "客户类型",
-    "name": "UserCustomersTypes",
-    "group": "User",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "[{\n    \"id\": 1,\n    \"text\": \"VIP\"\n}]",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/customers.py",
     "groupTitle": "User"
   },
   {
