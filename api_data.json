@@ -594,9 +594,32 @@
           {
             "group": "Parameter",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "remark",
             "description": "<p>备注</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "post",
+    "url": "/api/customers/types",
+    "title": "创建客户类型",
+    "name": "CreateCustomersTypes",
+    "group": "Customer",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "text",
+            "description": "<p>类型名称</p>"
           }
         ]
       }
@@ -1331,7 +1354,7 @@
   {
     "type": "get",
     "url": "/api/orders",
-    "title": "订单列表",
+    "title": "订单列表(麦策)",
     "name": "OrderList",
     "group": "Order",
     "version": "1.0.0",
@@ -1344,6 +1367,52 @@
             "optional": true,
             "field": "type",
             "description": "<p>类型1:等待审核,2:合同寄还,3:资料报单,4:合同寄还,不传表示所有订单</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"estimate_pay_time\": \"2017-03-22\",  # 预计打款日\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"dividends_percentage\": 0.0008,     # 分成比例\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"last_news\": \"最新进度\",\n    \"timeline\": [{                      # 时间线\n        \"name\": \"资料报单\",\n        \"status\": 1     # 进度状态 0:待进行,1:进行中,2:已结束,3:失败\n    }],\n    \"history\": [{                       # 订单动态历史\n        \"timestamp\": \"2017-04-12\",\n        \"event\": \"订单已创建，正在等待公司审核\",\n        \"status\": 1     # 进度状态 1:进行中,2:已结束\n    }],\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/api/orders/list",
+    "title": "订单列表",
+    "name": "OrderListV2",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "user_id",
+            "description": "<p>用户ID</p>"
           },
           {
             "group": "Parameter",
@@ -1365,6 +1434,13 @@
             "optional": true,
             "field": "existence",
             "description": "<p>存续类型 0:已结束1:存续中</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "source",
+            "description": "<p>来源,1:麦策2:机构</p>"
           },
           {
             "group": "Parameter",
@@ -1875,7 +1951,7 @@
   {
     "type": "get",
     "url": "/api/products/org/:id/stats",
-    "title": "机构产品数据统计(用户维度)",
+    "title": "机构产品数据统计(机构维度)",
     "name": "OrgProductStats",
     "group": "Product",
     "success": {
