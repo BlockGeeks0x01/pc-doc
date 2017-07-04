@@ -997,6 +997,36 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/api/orders/:order_no/bonus",
+    "title": "创建订单分红记录",
+    "name": "CreateOrderBONUS",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>金额</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "datetime",
+            "optional": false,
+            "field": "bonus_time",
+            "description": "<p>赎回生效日期</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "post",
     "url": "/api/orders/:order_no/distributions",
     "title": "创建订单分配记录",
     "name": "CreateOrderDistribution",
@@ -1237,6 +1267,16 @@ define({ "api": [
   },
   {
     "type": "delete",
+    "url": "/api/orders/:order_no/bonus/:id",
+    "title": "删除订单分红记录",
+    "name": "DeleteOrderBonus",
+    "group": "Order",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "delete",
     "url": "/api/orders/:order_no/distributions/:id",
     "title": "删除订单分配记录",
     "name": "DeleteOrderDistribution",
@@ -1292,6 +1332,45 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
+  },
+  {
+    "type": "get",
+    "url": "/api/orders/:order_no/bonus",
+    "title": "订单分红记录",
+    "name": "OrderBonus",
+    "group": "Order",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"id\": 1,\n    \"amount\": 13,   # 金额\n    \"bonus_time\": \"2017-01-01T17:00:00\",   # 分配时间\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p>"
+          }
+        ]
+      }
+    }
   },
   {
     "type": "get",
@@ -1630,6 +1709,36 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "put",
+    "url": "/api/orders/:order_no/bonus/:id",
+    "title": "更新订单分红记录",
+    "name": "UpdateOrderBonus",
+    "group": "Order",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>金额</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "datetime",
+            "optional": false,
+            "field": "bonus_time",
+            "description": "<p>分红日期</p>"
+          }
+        ]
+      }
+    },
     "filename": "../purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
