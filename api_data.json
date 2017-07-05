@@ -694,7 +694,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"id\": 3,\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"product_count\": 3  # 产品数量\n}]",
+          "content": "[{\n    \"id\": 3,\n    \"name\": \"张东\",\n    \"no\": \"u3oi213o12u3oi1u\",   # 客户编号\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币/万\n    \"total_invest_dollar\": 99,  # 累计配置美金/万\n    \"product_count\": 3  # 产品数量\n}]",
           "type": "json"
         }
       ]
@@ -721,6 +721,16 @@
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
+  },
+  {
+    "type": "get",
+    "url": "/api/user/reserve_product?product_id=XXX",
+    "title": "",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "group": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_user_py",
+    "groupTitle": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_user_py",
+    "name": "GetApiUserReserve_productProduct_idXxx"
   },
   {
     "type": "post",
@@ -764,6 +774,16 @@
     "url": "/api/file/:fid",
     "title": "访问文件",
     "name": "AccessFile",
+    "group": "File",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/file.py",
+    "groupTitle": "File"
+  },
+  {
+    "type": "get",
+    "url": "/api/file/pub/:md5",
+    "title": "访问文件(md5)",
+    "name": "AccessFileByMd5",
     "group": "File",
     "version": "1.0.0",
     "filename": "../purchasing_consortia/frontend/file.py",
@@ -1136,7 +1156,7 @@
             "type": "int",
             "optional": false,
             "field": "amount",
-            "description": "<p>金额</p>"
+            "description": "<p>份额</p>"
           },
           {
             "group": "Parameter",
@@ -2820,6 +2840,36 @@
   },
   {
     "type": "post",
+    "url": "/api/user/login",
+    "title": "用户登录",
+    "name": "Login",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mobile",
+            "description": "<p>手机号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>密码</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
     "url": "/api/user/logout",
     "title": "注销",
     "name": "Logout",
@@ -2951,6 +3001,36 @@
     "name": "RejectInvite",
     "group": "User",
     "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/api/user/reserve_product",
+    "title": "用户预约产品",
+    "name": "Reserve",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userid",
+            "description": "<p>用户id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "productid",
+            "description": "<p>产品id</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
