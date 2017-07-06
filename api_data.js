@@ -303,229 +303,6 @@ define({ "api": [
   {
     "type": "get",
     "url": "/",
-    "title": "订单小进度类型",
-    "name": "OrderSubType",
-    "group": "Constant",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "101",
-            "description": "<p>等待管理员审核</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "102",
-            "description": "<p>管理员审核不通过</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "103",
-            "description": "<p>等待麦策审核</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "104",
-            "description": "<p>麦策审核不通过</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "105",
-            "description": "<p>待申领合同</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "106",
-            "description": "<p>待资料报单</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "109",
-            "description": "<p>等待资料报单审核</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "110",
-            "description": "<p>待重新资料报单</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "111",
-            "description": "<p>待合同寄还</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "112",
-            "description": "<p>等待麦策确认合同扫描件有效性</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "113",
-            "description": "<p>已确认合同有效，等待寄还</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "114",
-            "description": "<p>等待项目成立</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "117",
-            "description": "<p>订单结束</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "119",
-            "description": "<p>关闭</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
-    "groupTitle": "Constant"
-  },
-  {
-    "type": "get",
-    "url": "/",
-    "title": "订单大进度类型",
-    "name": "OrderType",
-    "group": "Constant",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "1",
-            "description": "<p>预约中</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "2",
-            "description": "<p>合同申领</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "3",
-            "description": "<p>资料报单</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "4",
-            "description": "<p>合同寄还</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "5",
-            "description": "<p>项目成立</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
-    "groupTitle": "Constant"
-  },
-  {
-    "type": "get",
-    "url": "/",
-    "title": "产品状态",
-    "name": "ProductStatus",
-    "group": "Constant",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "0",
-            "description": "<p>待观察</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "1",
-            "description": "<p>观察中</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "2",
-            "description": "<p>众筹中</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "3",
-            "description": "<p>已完成</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "4",
-            "description": "<p>募集结束</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "int",
-            "optional": false,
-            "field": "-1",
-            "description": "<p>已关闭</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
-    "groupTitle": "Constant"
-  },
-  {
-    "type": "get",
-    "url": "/",
     "title": "用户角色",
     "name": "Role",
     "group": "Constant",
@@ -1363,7 +1140,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
+          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"survival\": true,   # 是否存续中\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
           "type": "json"
         }
       ]
@@ -1379,7 +1156,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"amount\": 12,   # 认购金额\n    \"persistent_share\": 100,    # 存续份额\n    \"prospective_earning\": 0.11,    # 预期年化收益\n    \"buy_duration\": 12, # 期限\n    \"start_date\": \"2017-11-11T17:00:00\",    # 成立日\n    \"buy_time\": \"2017-11-11T17:00:00\",    # 认购日\n    \"last_redemption_time\": \"2017-11-11T17:00:00\",    # 最后赎回日\n    \"end_date\": \"2017-11-11T17:00:00\",    # 结束日\n    \"user_name\": \"理财师\",\n    \"remark\": \"备注\",\n    \"book_profit\": \"133\",   # 账面收益\n    \"currency\": 1,\n    \"distribution\": 999,    # 分配金额\n    \"book_profit_percent\": 0.12,    # 账面收益率\n    \"buy_value\": 1, # 认购日净值\n    \"last_redemption_value\": 1.33,  # 最后赎回净值\n    \"last_value_update_time\": \"2017-11-11T17:00:00\",    # 最新净值日\n    \"last_value\": 1.33,    # 最新净值\n    \"persistent_amount\": 933,    # 存续金额\n    \"bonus\": 933,    # 分红金额\n}",
+          "content": "{\n    \"amount\": 12,   # 认购金额\n    \"persistent_share\": 100,    # 存续份额\n    \"prospective_earning\": 0.11,    # 预期年化收益\n    \"buy_duration\": 12, # 期限\n    \"start_date\": \"2017-11-11T17:00:00\",    # 成立日\n    \"buy_time\": \"2017-11-11T17:00:00\",    # 认购日\n    \"last_redemption_time\": \"2017-11-11T17:00:00\",    # 最后赎回日\n    \"end_date\": \"2017-11-11T17:00:00\",    # 结束日\n    \"user_name\": \"理财师\",\n    \"remark\": \"备注\",\n    \"book_profit\": \"133\",   # 账面收益\n    \"currency\": 1,\n    \"distribution\": 999,    # 分配金额\n    \"book_profit_percent\": 0.12,    # 账面收益率\n    \"buy_value\": 1, # 认购日净值\n    \"last_redemption_value\": 1.33,  # 最后赎回净值\n    \"last_value_update_time\": \"2017-11-11T17:00:00\",    # 最新净值日\n    \"last_value\": 1.33,    # 最新净值\n    \"persistent_amount\": 933,    # 存续金额\n    \"bonus\": 933,    # 分红金额\n    \"survival\": true,   # 是否存续中\n}",
           "type": "json"
         }
       ]
@@ -1495,7 +1272,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
+          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"survival\": true,   # 是否存续中\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
           "type": "json"
         }
       ]
@@ -1619,7 +1396,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
+          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"survival\": true,   # 是否存续中\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
           "type": "json"
         }
       ]
