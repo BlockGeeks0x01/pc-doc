@@ -1258,7 +1258,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"id\": 1,\n    \"amount\": 13,   # 金额\n    \"redeem_value\": 1.4,    # 赎回时净值（浮动）\n    \"fee\": 13.31,   # 手续费\n    \"redemption_time\": \"2017-01-01T17:00:00\",   # 赎回生效日\n    \"remark\": \"备注\",\n    \"status\": 1,    # 状态1:等待，2：成功, 3:失败\n    \"market_value_change\": 1.33,    #市值变化\n    \"actual_profit\": 999,   # 实际收益\n    \"absolute_profit\": 999, # 绝对收益\n}",
+          "content": "[{\n    \"id\": 1,\n    \"amount\": 13,   # 金额\n    \"redeem_value\": 1.4,    # 赎回时净值（浮动）\n    \"fee\": 13.31,   # 手续费\n    \"redemption_time\": \"2017-01-01T17:00:00\",   # 赎回生效日\n    \"remark\": \"备注\",\n    \"status\": 1,    # 状态1:等待，2：成功, 3:失败\n    \"market_value_change\": 1.33,    #市值变化\n    \"actual_profit\": 999,   # 实际收益\n    \"absolute_profit\": 999, # 绝对收益\n}]",
           "type": "json"
         }
       ]
@@ -1554,6 +1554,25 @@
     },
     "filename": "../purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
+  },
+  {
+    "type": "get",
+    "url": "/api/org/profile",
+    "title": "机构信息",
+    "name": "OrgProfile",
+    "group": "Org",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"customers\": 99,\n    \"employees\": 100,\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"order_amount\": {\n        \"total\": {  # 总配置\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        },\n        \"existence\": {  #  存续\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        }\n    },\n    \"income\": {         # 分成\n        \"rmb\": 0,\n        \"dollar\": 99\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/org.py",
+    "groupTitle": "Org"
   },
   {
     "type": "post",
@@ -2549,7 +2568,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"work_year\": 1,\n    \"role\": 20              # 角色(20创始人, 21管理员, 22产品管理员, 23理财师)\n    \"order_count\": {\n        \"org\": 12,  # 机构\n        \"maice\": 12 # 麦策\n    },\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"customer_count\": {\n        \"total\": 3,\n        \"existence\": 5, # 存续客户数\n    },\n    \"order_amount\": {\n        \"total\": {  # 总配置\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        },\n        \"existence\": {  #  存续\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        }\n    },\n    \"income\": {         # 已赚取分成\n        \"finished\": {\n            \"rmb\": 0,\n            \"dollar\": 99\n        },\n        \"waiting\": {\n            \"rmb\": 0,\n            \"dollar\": 99\n        }\n    }\n}",
+          "content": "{\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"work_year\": 1,\n    \"role\": 20              # 角色(20创始人, 21管理员, 22产品管理员, 23理财师)\n    \"order_count\": {\n        \"org\": 12,  # 机构\n        \"maice\": 12 # 麦策\n    },\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"customer_count\": {\n        \"total\": 3,\n        \"existence\": 5, # 存续客户数\n    },\n    \"order_amount\": {\n        \"total\": {  # 总配置\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        },\n        \"existence\": {  #  存续\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        }\n    },\n    \"income\": {         # 分成\n        \"rmb\": 0,\n        \"dollar\": 99\n    }\n}",
           "type": "json"
         }
       ]
@@ -2945,24 +2964,5 @@
         ]
       }
     }
-  },
-  {
-    "type": "get",
-    "url": "/api/user/profit/summary",
-    "title": "采购分成",
-    "name": "UserProfitSummary",
-    "group": "User",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"account_type\": 1,  # 账户类型,1:个人, 2:对公\n    \"account_name\": \"账户名\",\n    \"account_no\": \"账号\",\n    \"bank_name\": \"开户行\",\n\n    \"total\": {\n        \"income_rmb\": 999,\n        \"income_dollar\": 2011\n    }\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
   }
 ]

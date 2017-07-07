@@ -10,6 +10,7 @@
     "Customer",
     "Product",
     "Order",
+    "Org",
     "Notification",
     "Config",
     "File",
@@ -20,7 +21,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-07-06T10:25:47.713Z",
+    "time": "2017-07-07T06:47:27.005Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
