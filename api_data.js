@@ -1118,6 +1118,52 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/api/orders/book_profit_graph_million",
+    "title": "订单账面收益图（百万）",
+    "name": "OrderBookProfitsMillion",
+    "group": "Order",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "user_id",
+            "description": "<p>用户ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "org_id",
+            "description": "<p>机构ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "customer_no",
+            "description": "<p>客户编号</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"date\": \"2017-12-01\",\n    \"book_profit\": {\n        \"order\": 300,   # 订单\n        \"bank\": 300,    # 银行\n        \"csi300\": 229   # 沪深300\n    }\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "get",
     "url": "/api/orders/list/:order_no",
     "title": "订单详情",
     "name": "OrderDetails",
@@ -1643,6 +1689,25 @@ define({ "api": [
         ]
       }
     },
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "get",
+    "url": "/api/products//myself/stats",
+    "title": "我的产品统计",
+    "name": "MyProductStat",
+    "group": "Product",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"existence_percent_by_profit_type\": {   # 浮动/固定存续\n        \"fixed\": 0.12,\n        \"float\": 0.88\n    },\n    \"existence_percent_by_currency\": {  # 人民币/美元存续\n        \"rmb\": 0.9,\n        \"dollar\": 0.1\n    },\n    \"existence_percent_by_strategy\": {  # 存续产品策略\n        \"主观多空\": 0.8,\n        \"其他\": 0.2\n    },\n    \"rate\": {   # 汇率\n        \"value\": 1.3,\n        \"date\": \"2017-06-01\"\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
@@ -2791,50 +2856,6 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/api/user/bank_account",
-    "title": "更新银行账户信息",
-    "name": "UpdateUserBankAccount",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "account_type",
-            "description": "<p>账户类型,1:个人, 2:对公</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "account_name",
-            "description": "<p>账户名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "account_no",
-            "description": "<p>账号</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "bank_name",
-            "description": "<p>开户行</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
-  },
-  {
-    "type": "post",
     "url": "/api/user/profile",
     "title": "修改当前用户信息",
     "name": "UpdateUserProfile",
@@ -2866,7 +2887,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100409,\n    \"name\": \"王伟强\",\n    \"avatar\": \"http://www.xsadas.jpg\",\n    \"certification_status\": 1,  # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"is_admin\": true,\n    \"certification_info\": {\n        \"company_name\": \"机构名称\",\n        \"position\": \"职位理财师\",\n        \"work_year\": 1,\n        \"industry\": 3,\n    }\n}",
+          "content": "{\n    \"user_id\": 100409,\n    \"name\": \"王伟强\",\n    \"avatar\": \"http://www.xsadas.jpg\",\n    \"certification_status\": 1,  # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"certification_info\": {\n        \"company_name\": \"机构名称\",\n        \"position\": \"职位理财师\",\n        \"work_year\": 1,\n        \"industry\": 3,\n    }\n}",
           "type": "json"
         }
       ]
