@@ -1164,6 +1164,38 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/api/orders/cash_flow",
+    "title": "客户现金流",
+    "name": "OrderCashFlow",
+    "group": "Order",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "customer_no",
+            "description": "<p>客户编号</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response: (如果返回None表示没有)",
+          "content": "[{\n    \"date\": \"2017-06-01\",\n    \"distribution\": 199,    # 分配金额\n    \"redemption\": 199,  # 赎回\n    \"open\": 199,    # 定期开放\n    \"total\": 999\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "get",
     "url": "/api/orders/list/:order_no",
     "title": "订单详情",
     "name": "OrderDetails",
