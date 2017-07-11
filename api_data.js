@@ -410,7 +410,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"no\": \"8302183921889301\",  # 客户编号\n    \"name\": \"张东\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"first_invest_time\": \"2017-12-16\",\n    \"last_invest_time\": \"2017-11-16\",\n    \"remark\": \"备注\",\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"profit\": {     # 收益\n        \"total\": {  # 账面收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"finished\": {   # 已分配收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"existence_percent_by_profit_type\": {\n        \"fixed\": 0.12,\n        \"float\": 0.88\n    },\n    \"existence_percent_by_currency\": {\n        \"rmb\": 0.9,\n        \"dollar\": 0.1\n    },\n    \"existence_percent_by_strategy\": {\n        \"主观多空\": 0.8,\n        \"其他\": 0.2\n    }\n}",
+          "content": "{\n    \"no\": \"8302183921889301\",  # 客户编号\n    \"name\": \"张东\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"first_invest_time\": \"2017-12-16\",\n    \"last_invest_time\": \"2017-11-16\",\n    \"remark\": \"备注\",\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"profit\": {     # 收益\n        \"total\": {  # 账面收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"finished\": {   # 已分配收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"existence_percent_by_profit_type\": [   # 浮动/固定存续\n        {\"name\": \"fixed\": \"value\": 0.12},\n        {\"name\": \"float\": \"value\": 0.12},\n    }],\n    \"existence_percent_by_currency\": {  # 人民币/美元存续\n        {\"name\": \"rmb\": \"value\": 0.12},\n        {\"name\": \"dollar\": \"value\": 0.12},\n    },\n    \"existence_percent_by_strategy\": {  # 存续产品策略\n        {\"name\": \"主管多空\": \"value\": 0.12},\n        {\"name\": \"基建\": \"value\": 0.12},\n    },\n}",
           "type": "json"
         }
       ]
@@ -823,7 +823,7 @@ define({ "api": [
             "type": "int",
             "optional": false,
             "field": "amount",
-            "description": "<p>金额</p>"
+            "description": "<p>金额（元）/份额（份）</p>"
           },
           {
             "group": "Parameter",
@@ -874,7 +874,7 @@ define({ "api": [
             "type": "int",
             "optional": false,
             "field": "amount",
-            "description": "<p>份额</p>"
+            "description": "<p>金额（元）/份额（份）</p>"
           },
           {
             "group": "Parameter",
@@ -960,7 +960,7 @@ define({ "api": [
             "type": "float",
             "optional": false,
             "field": "amount",
-            "description": "<p>金额</p>"
+            "description": "<p>金额（万）</p>"
           },
           {
             "group": "Parameter",
@@ -974,7 +974,7 @@ define({ "api": [
             "type": "float",
             "optional": true,
             "field": "buy_share",
-            "description": "<p>份额</p>"
+            "description": "<p>份额(万份)</p>"
           },
           {
             "group": "Parameter",
@@ -1592,7 +1592,7 @@ define({ "api": [
             "type": "int",
             "optional": false,
             "field": "amount",
-            "description": "<p>金额</p>"
+            "description": "<p>金额（元）/份额（份）</p>"
           },
           {
             "group": "Parameter",
@@ -1652,7 +1652,7 @@ define({ "api": [
             "type": "int",
             "optional": false,
             "field": "amount",
-            "description": "<p>金额</p>"
+            "description": "<p>金额（元）/份额（份）</p>"
           },
           {
             "group": "Parameter",
@@ -1782,7 +1782,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"existence_percent_by_profit_type\": [   # 浮动/固定存续\n        {\"name\": \"fixed\": \"value\": 0.12},\n        {\"name\": \"float\": \"value\": 0.12},\n    }],\n    \"existence_percent_by_currency\": {  # 人民币/美元存续\n        {\"name\": \"rmb\": \"value\": 0.12},\n        {\"name\": \"dollar\": \"value\": 0.12},\n    },\n    \"existence_percent_by_strategy\": {  # 存续产品策略\n        {\"name\": \"主管多空\": \"value\": 0.12},\n        {\"name\": \"基建\": \"value\": 0.12},\n    },\n    \"rate\": {   # 汇率\n        \"value\": 1.3,\n        \"date\": \"2017-06-01\"\n    }\n}",
+          "content": "{\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 总\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        },\n        \"existence\": {  #  存续\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        }\n    },\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"existence_percent_by_profit_type\": [   # 浮动/固定存续\n        {\"name\": \"fixed\": \"value\": 0.12},\n        {\"name\": \"float\": \"value\": 0.12},\n    }],\n    \"existence_percent_by_currency\": {  # 人民币/美元存续\n        {\"name\": \"rmb\": \"value\": 0.12},\n        {\"name\": \"dollar\": \"value\": 0.12},\n    },\n    \"existence_percent_by_strategy\": {  # 存续产品策略\n        {\"name\": \"主管多空\": \"value\": 0.12},\n        {\"name\": \"基建\": \"value\": 0.12},\n    },\n    \"rate\": {   # 汇率\n        \"value\": 1.3,\n        \"date\": \"2017-06-01\"\n    }\n}",
           "type": "json"
         }
       ]
