@@ -1060,6 +1060,64 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/api/orders/:product_id/maice",
+    "title": "麦策预约订单",
+    "name": "MaiceOrder",
+    "group": "Order",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"survival\": true,   # 是否存续中\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"customer_no\": \"客户编号\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n    \"is_confirmed\": true,   # 是否已确认\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/api/orders/stats/myself",
+    "title": "我的订单统计",
+    "name": "MyOrderStats",
+    "group": "Order",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response: (如果返回None表示没有)",
+          "content": "{\n    \"orders\": 999,  # 单量\n    \"customers\": 199,    # 客户数量\n    \"products\": 199,  # 产品数量\n    \"amounts\": {\n        \"rmb\": 999,\n        \"dollar\": 999,\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "get",
     "url": "/api/orders/:order_no/bonus",
     "title": "订单分红记录",
     "name": "OrderBonus",
@@ -1165,7 +1223,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/api/orders/cash_flow",
-    "title": "客户现金流",
+    "title": "订单现金流",
     "name": "OrderCashFlow",
     "group": "Order",
     "parameter": {
@@ -1320,7 +1378,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"survival\": true,   # 是否存续中\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"customer_no\": \"客户编号\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
+          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"survival\": true,   # 是否存续中\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"customer_no\": \"客户编号\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n    \"is_confirmed\": true,   # 是否已确认\n}",
           "type": "json"
         }
       ]
@@ -1444,7 +1502,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"collect_account_name\": \"募集账户名\",\n        \"collect_account\": \"募集账号\",\n        \"bank_name\": \"开户行\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"survival\": true,   # 是否存续中\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"customer_no\": \"客户编号\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n}",
+          "content": "{\n    \"order_no\": \"201708123301\",\n    \"user\": {\n        \"id\": 100094,\n        \"name\": \"理财师A\"\n    },\n    \"product\": {\n        \"id\": 1000001,\n        \"name\": \"产品名称\",\n        \"remit_remark\": \"打款备注\",\n        \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    },\n    \"survival\": true,   # 是否存续中\n    \"self\": true,       # 是否是当前登录者创建的\n    \"customer_name\": \"客户名称\",\n    \"customer_no\": \"客户编号\",\n    \"actual_pay_time\": \"2017-03-30\",    # 实际打款日\n    \"created_time\": \"2017-03-01T15:33:22\",  # 订单创建时间\n    \"precontract_amount\": 300,          # 金额\n    \"currency\": 1,                      # 1:人民币,2:美元\n    \"type\": 1,                          # 订单当前大进度类型\n    \"sub_type\": 1,                      # 订单当前小进度类型\n    \"buy_share\": 100,   # 认购份额\n    \"persistent_share\": 100, # 存续份额\n    \"buy_time\": \"2017-12-16T16:00:00\"   # 认购日/计息确认日\n    \"buy_value\": 33,    # 认购时净值（浮动）\n    \"last_redemption_time\": \"2017-12-16T16:00:00\" # 浮动类最后一次的赎回日\n    \"last_redemption_value\": 3.14,  # 浮动类最后一次赎回的净值\n    \"buy_duration\": 12, # 购买期限\n    \"prospective_earning\": 3.14,    # 预期年化收益\n    \"last_value_update_time\": \"2017-12-16T16:00:00\" # 最新净值日\n    \"last_value\": 3.14,  # 最新净值\n    \"is_confirmed\": true,   # 是否已确认\n}",
           "type": "json"
         }
       ]
