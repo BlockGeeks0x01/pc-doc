@@ -292,6 +292,13 @@ define({ "api": [
             "optional": false,
             "field": "140015",
             "description": "<p>无法删除非在职人员</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "150001",
+            "description": "<p>无法删除存在订单的客户</p>"
           }
         ]
       }
@@ -495,6 +502,16 @@ define({ "api": [
         }
       ]
     },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "delete",
+    "url": "/api/customers/:id",
+    "title": "删除客户",
+    "name": "DeleteCustomer",
+    "group": "Customer",
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
