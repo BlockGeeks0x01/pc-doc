@@ -500,16 +500,6 @@
     "groupTitle": "Customer"
   },
   {
-    "type": "get",
-    "url": "/api/user/reserve_product?product_id=XXX",
-    "title": "",
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "group": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_user_py",
-    "groupTitle": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_user_py",
-    "name": "GetApiUserReserve_productProduct_idXxx"
-  },
-  {
     "type": "post",
     "url": "/api/feedback",
     "title": "用户反馈",
