@@ -744,20 +744,13 @@ define({ "api": [
             "optional": false,
             "field": "precontract_amount",
             "description": "<p>预约额度/万</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "estimate_pay_time",
-            "description": "<p>预计打款时间</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "[{\n    \"precontract_amount\": 300,  # 预约额度\n    \"name\": \"客户姓名\",\n    \"estimate_pay_time\": \"2017-10-23\"\n}]",
+          "content": "[{\n    \"precontract_amount\": 300,  # 预约额度\n    \"name\": \"客户姓名\"\n}]",
           "type": "json"
         }
       ]
