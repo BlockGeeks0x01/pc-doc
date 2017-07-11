@@ -1784,15 +1784,15 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/products//myself/stats",
-    "title": "我的产品统计",
+    "url": "/api/products//[myself|org]/stats",
+    "title": "我的/机构产品统计",
     "name": "MyProductStat",
     "group": "Product",
     "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"existence_percent_by_profit_type\": {   # 浮动/固定存续\n        \"fixed\": 0.12,\n        \"float\": 0.88\n    },\n    \"existence_percent_by_currency\": {  # 人民币/美元存续\n        \"rmb\": 0.9,\n        \"dollar\": 0.1\n    },\n    \"existence_percent_by_strategy\": {  # 存续产品策略\n        \"主观多空\": 0.8,\n        \"其他\": 0.2\n    },\n    \"rate\": {   # 汇率\n        \"value\": 1.3,\n        \"date\": \"2017-06-01\"\n    }\n}",
+          "content": "{\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"existence_percent_by_profit_type\": [   # 浮动/固定存续\n        {\"name\": \"fixed\": \"value\": 0.12},\n        {\"name\": \"float\": \"value\": 0.12},\n    }],\n    \"existence_percent_by_currency\": {  # 人民币/美元存续\n        {\"name\": \"rmb\": \"value\": 0.12},\n        {\"name\": \"dollar\": \"value\": 0.12},\n    },\n    \"existence_percent_by_strategy\": {  # 存续产品策略\n        {\"name\": \"主管多空\": \"value\": 0.12},\n        {\"name\": \"基建\": \"value\": 0.12},\n    },\n    \"rate\": {   # 汇率\n        \"value\": 1.3,\n        \"date\": \"2017-06-01\"\n    }\n}",
           "type": "json"
         }
       ]
