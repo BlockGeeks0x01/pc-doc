@@ -1767,6 +1767,16 @@
     "groupTitle": "Product"
   },
   {
+    "type": "delete",
+    "url": "/api/products/:id",
+    "title": "删除产品",
+    "name": "DeleteProduct",
+    "group": "Product",
+    "version": "1.0.0",
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
+  },
+  {
     "type": "post",
     "url": "/api/products/:pid/follow",
     "title": "关注/取消关注产品",
