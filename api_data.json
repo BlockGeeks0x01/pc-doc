@@ -1774,7 +1774,7 @@
   },
   {
     "type": "get",
-    "url": "/api/products//[myself|org]/stats",
+    "url": "/api/products/[myself|org]/stats",
     "title": "我的/机构产品统计",
     "name": "MyProductStat",
     "group": "Product",
