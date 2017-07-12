@@ -417,7 +417,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"no\": \"8302183921889301\",  # 客户编号\n    \"name\": \"张东\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"first_invest_time\": \"2017-12-16\",\n    \"last_invest_time\": \"2017-11-16\",\n    \"remark\": \"备注\",\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"profit\": {     # 收益\n        \"total\": {  # 账面收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"finished\": {   # 已分配收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"existence_percent_by_profit_type\": [   # 浮动/固定存续\n        {\"name\": \"fixed\": \"value\": 0.12},\n        {\"name\": \"float\": \"value\": 0.12},\n    }],\n    \"existence_percent_by_currency\": {  # 人民币/美元存续\n        {\"name\": \"rmb\": \"value\": 0.12},\n        {\"name\": \"dollar\": \"value\": 0.12},\n    },\n    \"existence_percent_by_strategy\": {  # 存续产品策略\n        {\"name\": \"主管多空\": \"value\": 0.12},\n        {\"name\": \"基建\": \"value\": 0.12},\n    },\n}",
+          "content": "{\n    \"id\": 12,\n    \"no\": \"8302183921889301\",  # 客户编号\n    \"name\": \"张东\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"first_invest_time\": \"2017-12-16\",\n    \"last_invest_time\": \"2017-11-16\",\n    \"remark\": \"备注\",\n    \"order_amount\": {   # 成交金额\n        \"total\": {  # 累计\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"profit\": {     # 收益\n        \"total\": {  # 账面收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"finished\": {   # 已分配收益\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"existence_percent_by_profit_type\": [   # 浮动/固定存续\n        {\"name\": \"fixed\": \"value\": 0.12},\n        {\"name\": \"float\": \"value\": 0.12},\n    }],\n    \"existence_percent_by_currency\": {  # 人民币/美元存续\n        {\"name\": \"rmb\": \"value\": 0.12},\n        {\"name\": \"dollar\": \"value\": 0.12},\n    },\n    \"existence_percent_by_strategy\": {  # 存续产品策略\n        {\"name\": \"主管多空\": \"value\": 0.12},\n        {\"name\": \"基建\": \"value\": 0.12},\n    },\n}",
           "type": "json"
         }
       ]
@@ -512,6 +512,43 @@
     "title": "删除客户",
     "name": "DeleteCustomer",
     "group": "Customer",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "patch",
+    "url": "/api/customers/:id",
+    "title": "编辑客户",
+    "name": "EditCustomer",
+    "group": "Customer",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "type",
+            "description": "<p>类型</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "remark",
+            "description": "<p>备注</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
