@@ -683,7 +683,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"ec\": 0,\n    \"message\": \"Success\",\n    \"data\": \"http://dasjlkjlk21j3kjlkdsaj.png\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n    \"ec\": 0,\n    \"message\": \"Success\",\n    \"data\": {\n        \"url\": \"http://dasjlkjlk21j3kjlkdsaj.png\",\n        \"id\": 33\n    }\n}",
           "type": "json"
         }
       ]
