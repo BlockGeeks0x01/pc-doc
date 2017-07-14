@@ -2078,7 +2078,7 @@
   },
   {
     "type": "get",
-    "url": "/api/products/profit_intervals",
+    "url": "/api/products/:product_id/profit_intervals",
     "title": "产品收益区间",
     "name": "ProductProfitIntervals",
     "group": "Product",
