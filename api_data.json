@@ -435,6 +435,25 @@
   },
   {
     "type": "get",
+    "url": "/api/customers/:customer_no/book_profit_graph",
+    "title": "客户订单账面收益图",
+    "name": "CustomerOrderBookProfits",
+    "group": "Customer",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"date\": \"2017-12-01\",\n    \"book_profit\": {\n        \"order\": 300,   # 订单\n        \"bank\": 300,    # 银行\n        \"csi300\": 229   # 沪深300\n    }\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "get",
     "url": "/api/customers",
     "title": "客户列表",
     "name": "CustomersList",
@@ -1972,13 +1991,6 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "name",
-            "description": "<p>产品名</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "int",
             "optional": true,
             "field": "source",
@@ -2019,7 +2031,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"profit_type\": 1,   # 收益类型\n    \"sell_status\": 1,\n    \"currency\": 1,\n    \"surplus_size\": 1900,   # 剩余额度/万元\n}",
+          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"profit_type\": 1,   # 收益类型\n    \"sell_status\": 1,\n    \"currency\": 1,\n    \"surplus_size\": 1900,   # 剩余额度/万元\n    \"invest_info\": \"投资方向\"\n}",
           "type": "json"
         }
       ]
@@ -2217,41 +2229,6 @@
           },
           {
             "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "name",
-            "description": "<p>产品名称</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "org_id",
-            "description": "<p>机构ID</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "sell_status",
-            "description": "<p>1:停售, 2:在售</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "source",
-            "description": "<p>来源,1:麦策2:机构</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "profit_type",
-            "description": "<p>收益类型,0：固定，1：浮动</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "int",
             "optional": true,
             "field": "page",
@@ -2278,6 +2255,59 @@
         }
       ]
     }
+  },
+  {
+    "type": "get",
+    "url": "/api/products/search",
+    "title": "产品搜索",
+    "name": "SearchProducts",
+    "group": "Product",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "source",
+            "description": "<p>来源,1:麦策2:机构</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": "<p>产品名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "page",
+            "description": "<p>第几页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "per_page",
+            "description": "<p>每页数量</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"invest_info\": \"投资方向\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
   },
   {
     "type": "put",
