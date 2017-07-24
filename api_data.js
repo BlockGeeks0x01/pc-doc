@@ -1306,7 +1306,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: (如果返回None表示没有)",
-          "content": "[{\n    \"date\": \"2017-06-01\",\n    \"distribution\": 199,    # 分配金额 / 元\n    \"redemption\": 199,  # 赎回 / 元\n    \"open\": 199,    # 定期开放 / 元\n    \"total\": 999\n}]",
+          "content": "[{\n    \"date\": \"2017-06-01\",\n    \"distribution\": 199,    # 分配金额 / 元\n    \"redemption\": 199,  # 赎回 / 元\n    \"open\": 199,    # 定期开放 / 元\n    \"total\": 999,\n    \"detail\": [{\n        \"date\": \"2017-06-01\",\n        \"distribution\": 199,    # 分配金额 / 元\n        \"redemption\": 199,  # 赎回 / 元\n        \"open\": 199,    # 定期开放 / 元\n        \"total\": 999,\n    }]\n}]",
           "type": "json"
         }
       ]
