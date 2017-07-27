@@ -1259,13 +1259,6 @@ define({ "api": [
             "optional": true,
             "field": "org_id",
             "description": "<p>机构ID</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "customer_no",
-            "description": "<p>客户编号</p>"
           }
         ]
       }
@@ -1970,7 +1963,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"currency\": 1,   # 货币类型\n    \"orders\": 21,      # 单量\n    \"customers\": 2 # 客户\n    \"total_amount\": 23,             # 累计金额 / 万\n    \"existence_amount\": 11,   # 存续金额 / 万\n}",
+          "content": "{\n    \"currency\": 1,   # 货币类型\n    \"orders\": 21,      # 单量\n    \"customers\": 2 # 客户\n    \"total_amount\": 23,             # 累计金额\n    \"existence_amount\": 11,   # 存续金额\n}",
           "type": "json"
         }
       ]
@@ -2076,6 +2069,25 @@ define({ "api": [
         {
           "title": "Request-Example:",
           "content": "{\n    \"participate\": true,\n    \"name\": \"小明\",\n    \"mobile\": \"15068975727\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "groupTitle": "Product"
+  },
+  {
+    "type": "get",
+    "url": "/api/products/:pid/brief",
+    "title": "产品简要信息",
+    "name": "ProductBriefInfo",
+    "group": "Product",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n}",
           "type": "json"
         }
       ]
@@ -2329,7 +2341,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"currency\": 1,   # 货币类型\n    \"orders\": 21,      # 单量\n    \"customers\": 2 # 客户\n    \"total_amount\": 23,             # 累计金额 / 万\n    \"existence_amount\": 11,   # 存续金额 / 玩\n}",
+          "content": "{\n    \"currency\": 1,   # 货币类型\n    \"orders\": 21,      # 单量\n    \"customers\": 2 # 客户\n    \"total_amount\": 23,             # 累计金额\n    \"existence_amount\": 11,   # 存续金额\n}",
           "type": "json"
         }
       ]
