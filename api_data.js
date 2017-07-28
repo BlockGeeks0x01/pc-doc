@@ -2014,6 +2014,13 @@ define({ "api": [
             "group": "Parameter",
             "type": "int",
             "optional": true,
+            "field": "currency",
+            "description": "<p>币种</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
             "field": "page",
             "description": "<p>第几页</p>"
           },
