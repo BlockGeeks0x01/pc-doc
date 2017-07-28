@@ -2031,7 +2031,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"profit_type\": 1,   # 收益类型\n    \"sell_status\": 1,\n    \"currency\": 1,\n    \"surplus_size\": 1900,   # 剩余额度/万元\n    \"invest_info\": \"投资方向\"\n}",
+          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"profit_type\": 1,   # 收益类型\n    \"sell_status\": 1,\n    \"currency\": 1,\n    \"minimum_subscription_size\": 10,    # 起够金额\n}",
           "type": "json"
         }
       ]
