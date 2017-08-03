@@ -350,6 +350,13 @@ define({ "api": [
             "optional": false,
             "field": "23",
             "description": "<p>理财师</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "24",
+            "description": "<p>合伙人</p>"
           }
         ]
       }
