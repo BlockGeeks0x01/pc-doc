@@ -1309,9 +1309,17 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": false,
+            "optional": true,
             "field": "customer_no",
             "description": "<p>客户编号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "org",
+            "defaultValue": "0",
+            "description": "<p>是否查看整个机构,1:是,0:否</p>"
           }
         ]
       }
@@ -1947,6 +1955,13 @@ define({ "api": [
           },
           {
             "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": "<p>产品名称</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "int",
             "optional": true,
             "field": "page",
@@ -2049,6 +2064,13 @@ define({ "api": [
             "optional": true,
             "field": "currency",
             "description": "<p>币种</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": "<p>产品名称</p>"
           },
           {
             "group": "Parameter",
