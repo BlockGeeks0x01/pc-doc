@@ -1339,6 +1339,53 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/api/orders/cash_flow/list",
+    "title": "订单现金流列表",
+    "name": "OrderCashFlowList",
+    "group": "Order",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "customer_no",
+            "description": "<p>客户编号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "org",
+            "defaultValue": "0",
+            "description": "<p>是否查看整个机构,1:是,0:否</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": true,
+            "field": "range",
+            "description": "<p>时间段</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response: (如果返回None表示没有)",
+          "content": "[{\n    \"date\": \"2017-06-01\",\n    \"money\": 300, # 金额\n    \"source\": 1,      # 来源,1:分配,2:赎回,3:开放\n    \"currency\": 1,\n    \"product\": {\n        \"id\": 1,\n        \"name\": \"产品名\"\n    },\n    \"customer\": {\n        \"name\": \"客户名\",\n        \"no\": \"321321j3lj21kjl\"\n    }\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "get",
     "url": "/api/orders/list/:order_no",
     "title": "订单详情",
     "name": "OrderDetails",
