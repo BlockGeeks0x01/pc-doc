@@ -725,6 +725,36 @@ define({ "api": [
     "groupTitle": "File"
   },
   {
+    "type": "post",
+    "url": "/api/log",
+    "title": "发送日志",
+    "name": "sendLog",
+    "group": "Log",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "action",
+            "description": "<p>行为,101:页面访问</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "content",
+            "description": "<p>内容</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/log.py",
+    "groupTitle": "Log"
+  },
+  {
     "type": "get",
     "url": "/api/notifications",
     "title": "消息列表",
@@ -1375,7 +1405,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: (如果返回None表示没有)",
-          "content": "[{\n    \"date\": \"2017-06-01\",\n    \"money\": 300, # 金额\n    \"source\": 1,      # 来源,1:分配,2:赎回,3:开放\n    \"currency\": 1,\n    \"product\": {\n        \"id\": 1,\n        \"name\": \"产品名\"\n    },\n    \"customer\": {\n        \"name\": \"客户名\",\n        \"no\": \"321321j3lj21kjl\"\n    }\n}]",
+          "content": "[{\n    \"date\": \"2017-06-01\",\n    \"money\": 300, # 金额\n    \"source\": 1,      # 来源,1:分配,2:赎回,3:开放\n    \"currency\": 1,\n    \"order_no\": \"32132132121332132\",\n    \"product\": {\n        \"id\": 1,\n        \"name\": \"产品名\"\n    },\n    \"customer\": {\n        \"name\": \"客户名\",\n        \"no\": \"321321j3lj21kjl\"\n    }\n}]",
           "type": "json"
         }
       ]
@@ -2476,7 +2506,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"currency\": 1,   # 货币类型\n    \"orders\": 21,      # 单量\n    \"customers\": 2 # 客户\n    \"total_amount\": 23,             # 累计金额\n    \"existence_amount\": 11,   # 存续金额\n}",
+          "content": "{\n    \"currency\": 1,   # 货币类型\n    \"profit_type\": 1,\n    \"orders\": 21,      # 单量\n    \"customers\": 2 # 客户\n    \"total_amount\": 23,             # 累计金额\n    \"existence_amount\": 11,   # 存续金额\n}",
           "type": "json"
         }
       ]

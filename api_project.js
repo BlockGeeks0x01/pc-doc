@@ -13,6 +13,7 @@ define({
     "Org",
     "Notification",
     "Search",
+    "Log",
     "Config",
     "File",
     "Feedback"
@@ -22,7 +23,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-08-11T07:26:10.489Z",
+    "time": "2017-08-16T03:46:10.709Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
