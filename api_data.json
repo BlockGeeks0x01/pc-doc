@@ -317,6 +317,64 @@
   {
     "type": "get",
     "url": "/",
+    "title": "日志类型",
+    "name": "LogType",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "101",
+            "description": "<p>页面访问</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "201",
+            "description": "<p>登陆</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "202",
+            "description": "<p>注册</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "301",
+            "description": "<p>关注产品</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "302",
+            "description": "<p>浏览产品</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "303",
+            "description": "<p>查看附件</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
+    "type": "get",
+    "url": "/",
     "title": "用户角色",
     "name": "Role",
     "group": "Constant",
@@ -1405,7 +1463,7 @@
       "examples": [
         {
           "title": "Success-Response: (如果返回None表示没有)",
-          "content": "[{\n    \"date\": \"2017-06-01\",\n    \"money\": 300, # 金额\n    \"source\": 1,      # 来源,1:分配,2:赎回,3:开放\n    \"currency\": 1,\n    \"order_no\": \"32132132121332132\",\n    \"product\": {\n        \"id\": 1,\n        \"name\": \"产品名\"\n    },\n    \"customer\": {\n        \"name\": \"客户名\",\n        \"no\": \"321321j3lj21kjl\"\n    }\n}]",
+          "content": "[{\n    \"date\": \"2017-06-01\",\n    \"money\": 300, # 金额\n    \"source\": 1,      # 来源,1:分配,2:赎回,3:开放\n    \"currency\": 1,\n    \"order_no\": \"32132132121332132\",\n    \"is_from_maice\": true,\n    \"product\": {\n        \"id\": 1,\n        \"name\": \"产品名\"\n    },\n    \"customer\": {\n        \"name\": \"客户名\",\n        \"no\": \"321321j3lj21kjl\"\n    }\n}]",
           "type": "json"
         }
       ]
