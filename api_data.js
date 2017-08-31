@@ -1273,13 +1273,13 @@ define({ "api": [
     "type": "get",
     "url": "/api/orders/stats/myself",
     "title": "我的订单统计",
-    "name": "MyOrderStats",
+    "name": "MyOrderStats_",
     "group": "Order",
     "success": {
       "examples": [
         {
           "title": "Success-Response: (如果返回None表示没有)",
-          "content": "{\n    \"orders\": 999,  # 单量\n    \"customers\": 199,    # 客户数量\n    \"products\": 199,  # 产品数量\n    \"amounts\": {    万元\n        \"rmb\": 999,\n        \"dollar\": 999,\n    }\n}",
+          "content": "{\n    \"orders\":   # 单量\n        {\n            \"total\": 12,\n            \"existence\": 11\n        }\n    \"customers\":    # 客户数量\n        {\n            \"total\": 12,\n            \"existence\": 11\n        }\n    \"products\":  # 产品数量\n        {\n            \"total\": 12,\n            \"existence\": 11\n        }\n    \"amounts\": {    万元\n        \"total\": {\n            \"rmb\": 999,\n            \"dollar\": 999,\n        },\n        \"existence\": {\n            \"rmb\": 999,\n            \"dollar\": 999,\n        }\n    }\n}",
           "type": "json"
         }
       ]
@@ -1940,10 +1940,33 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"customers\": 99,\n    \"employees\": 100,\n    \"product_count\": {\n        \"total\": { # 总产品数\n            \"maice\": 3, # 麦策\n            \"org\": 2    # 机构\n        },\n        \"existence\": { # 存续产品数\n            \"maice\": 3,\n            \"org\": 99\n        }\n    },\n    \"order_amount\": {\n        \"total\": {  # 总配置\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        },\n        \"existence\": {  #  存续\n            \"maice\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            },\n            \"org\": {\n                \"rmb\": 0,\n                \"dollar\": 0\n            }\n        }\n    },\n    \"income\": {         # 分成\n        \"rmb\": 0,\n        \"dollar\": 99\n    }\n}",
+          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    }\n}",
           "type": "json"
         }
       ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/org.py",
+    "groupTitle": "Org"
+  },
+  {
+    "type": "post",
+    "url": "/api/org/profile",
+    "title": "修改机构信息",
+    "name": "UpdateOrgProfile",
+    "group": "Org",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "logo",
+            "description": "<p>图标</p>"
+          }
+        ]
+      }
     },
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/org.py",
@@ -2459,8 +2482,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "int",
             "optional": true,
-            "field": "status",
-            "description": "<p>产品状态 1:观察中,2:采购中,3:往期产品</p>"
+            "field": "type",
+            "description": "<p>产品状态 1:固定收益,2:阳关私募,3:海外基金，4：保险</p>"
           },
           {
             "group": "Parameter",
@@ -2984,7 +3007,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/api/user/login",
-    "title": "用户登录",
+    "title": "用户token登录",
     "name": "Login",
     "group": "User",
     "parameter": {
@@ -3163,6 +3186,15 @@ define({ "api": [
           }
         ]
       }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"certification_status\": 1       # 审核状态\n}",
+          "type": "json"
+        }
+      ]
     },
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
