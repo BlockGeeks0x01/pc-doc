@@ -569,7 +569,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"id\": 3,\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币\n    \"total_invest_dollar\": 99,  # 累计配置美金\n    \"product_count\": 3  # 产品数量\n}]",
+          "content": "[{\n    \"id\": 3,\n    \"name\": \"张东\",\n    \"CFP_name\": \"理财师姓名\",\n    \"type\": {\n        \"id\": 12,\n        \"text\": \"VIP客户\"\n    },\n    \"total_invest_rmb\": 33, # 累计配置人民币\n    \"total_invest_dollar\": 99,  # 累计配置美金\n    \"exist_invest_rmb\": 33, # 存续配置人民币\n    \"exist_invest_dollar\": 99,  # 存续配置美金\n    \"product_count\": 3  # 产品数量\n}]",
           "type": "json"
         }
       ]
