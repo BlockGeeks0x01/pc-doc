@@ -2352,7 +2352,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"profit_type\": 1,   # 收益类型\n    \"type\": 1,      # 产品类型\n    \"sell_status\": 1,\n    \"currency\": 1,\n    \"fund_manager\": \"管理人\",\n    \"minimum_subscription_size\": 10,    # 起够金额\n}",
+          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"profit_type\": 1,   # 收益类型\n    \"type\": 1,      # 产品类型\n    \"sell_status\": 1,\n    \"currency\": 1,\n    \"fund_manager\": \"管理人\",\n    \"minimum_subscription_size\": 10,    # 起够金额\n    \"invest_info\": \"投资方向\",\n    \"last_pay_time\": \"2015-12-12T11:11:11\"  # 最迟打款时间\n}",
           "type": "json"
         }
       ]
