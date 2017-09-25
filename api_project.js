@@ -11,6 +11,7 @@ define({
     "Product",
     "Order",
     "Org",
+    "Channel",
     "Notification",
     "Search",
     "Log",
@@ -23,7 +24,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-09-25T08:37:53.157Z",
+    "time": "2017-09-25T08:38:50.834Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
