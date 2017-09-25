@@ -1,6 +1,63 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/api/channel/pusers/:id",
+    "title": "理财师详情",
+    "name": "puser_detail",
+    "group": "Channel",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"id\": 12,\n    \"name\": \"姓名\",\n    \"org\": {\n        \"id\": 1,\n        \"name\": \"机构名\",\n    },\n    \"mobile\": \"1506712321\",\n    \"referrer_name\": \"推荐人\",\n    \"orders\": 199,  # 交易数\n    \"amounts\": {    # 成交金额\n        \"rmb\": 199,\n        \"dollar\": 299\n    },\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/channel.py",
+    "groupTitle": "Channel"
+  },
+  {
+    "type": "get",
+    "url": "/api/channel/pusers",
+    "title": "理财师列表",
+    "name": "puser_list",
+    "group": "Channel",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"id\": 12,\n    \"name\": \"姓名\",\n    \"org\": {\n        \"id\": 1,\n        \"name\": \"机构名\",\n    },\n    \"source\":1,\n    \"mobile\": \"1506712321\",\n    \"orders\": 199,  # 交易数\n    \"amounts\": {    # 成交金额\n        \"rmb\": 199,\n        \"dollar\": 299\n    },\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/channel.py",
+    "groupTitle": "Channel"
+  },
+  {
+    "type": "get",
+    "url": "/api/channel/referrers/myself",
+    "title": "推荐人详情",
+    "name": "referrer_detail",
+    "group": "Channel",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"pusers\": {\n        \"total\": 99,    # 总计人数\n        \"valid\": 33,    # 有成交订单的\n    },\n    \"orders\": 199,  # 推荐交易数\n    \"amounts\": {    # 成交金额\n        \"rmb\": 199,\n        \"dollar\": 299\n    },\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/channel.py",
+    "groupTitle": "Channel"
+  },
+  {
+    "type": "get",
     "url": "/api/config/banner",
     "title": "Banner页",
     "name": "Banner",
@@ -415,6 +472,43 @@ define({ "api": [
             "optional": false,
             "field": "24",
             "description": "<p>合伙人</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
+    "type": "get",
+    "url": "/",
+    "title": "用户标签",
+    "name": "Tag",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "1",
+            "description": "<p>内部用户</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "2",
+            "description": "<p>外部用户</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "4",
+            "description": "<p>推荐人</p>"
           }
         ]
       }
@@ -1273,7 +1367,7 @@ define({ "api": [
     "type": "get",
     "url": "/api/orders/stats/myself",
     "title": "我的订单统计",
-    "name": "MyOrderStats_",
+    "name": "MyOrderStats",
     "group": "Order",
     "success": {
       "examples": [
@@ -1593,6 +1687,13 @@ define({ "api": [
             "optional": true,
             "field": "source",
             "description": "<p>来源,1:麦策2:机构</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "channel_user_id",
+            "description": "<p>推荐人查看的理财师ID</p>"
           },
           {
             "group": "Parameter",
@@ -2251,7 +2352,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"profit_type\": 1,   # 收益类型\n    \"type\": 1,      # 产品类型\n    \"sell_status\": 1,\n    \"currency\": 1,\n    \"minimum_subscription_size\": 10,    # 起够金额\n}",
+          "content": "{\n    \"id\": 113,\n    \"name\": \"产品名称\",\n    \"org_id\": 1,        # 如果来自麦策，就是null\n    \"profit_type\": 1,   # 收益类型\n    \"type\": 1,      # 产品类型\n    \"sell_status\": 1,\n    \"currency\": 1,\n    \"fund_manager\": \"管理人\",\n    \"minimum_subscription_size\": 10,    # 起够金额\n}",
           "type": "json"
         }
       ]
@@ -3448,7 +3549,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"is_org_member\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n    \"org_member_count\": 3,              # 旗下理财师人数\n    \"role\": 21                          # 角色\n}",
+          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"is_org_member\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n    \"org_member_count\": 3,              # 旗下理财师人数\n    \"role\": 21                          # 角色\n    \"tag\": 2,                           # 用户标签\n}",
           "type": "json"
         }
       ]
