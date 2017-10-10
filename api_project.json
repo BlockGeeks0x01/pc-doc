@@ -13,19 +13,20 @@
     "Org",
     "Channel",
     "Notification",
-    "CalendarNotice",
+    "CalendarEvent",
     "Search",
     "Log",
     "Config",
     "File",
-    "Feedback"
+    "Feedback",
+    "Time"
   ],
   "sampleUrl": false,
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-10-09T11:00:36.134Z",
+    "time": "2017-10-10T07:40:55.134Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
