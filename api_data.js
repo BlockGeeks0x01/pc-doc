@@ -1,5 +1,24 @@
 define({ "api": [
   {
+    "type": "get",
+    "url": "/api/calendar_event",
+    "title": "日历事件",
+    "name": "CalendarEvents",
+    "group": "CalendarEvent",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\"2017-10-01\": [\n    \"id\": 12,\n    \"type\": 2,  事件类型,1:产品过期,2:产品分配,3:产品开放,4:自定义\n    \"event_date\": \"2017-10-01\",    # 事件日期\n    \"advanced_days\": 3,     # 提前提醒天数\n    \"repeat_type\": 1,   # 重复类型,1:天，2：周，3：月，4：年\n    \"customer_id\": 33,  # 客户ID\n    \"customer_name\": \"客户姓名\",\n    \"content\": \"事件说明\",\n    \"target_id\": \"321321\",  # 跳转ID\n    \"msg\": \"事件内容\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "../purchasing_consortia/frontend/calendar.py",
+    "groupTitle": "CalendarEvent"
+  },
+  {
     "type": "post",
     "url": "/api/calendar_event",
     "title": "创建日历事件",
@@ -123,25 +142,6 @@ define({ "api": [
     },
     "filename": "../purchasing_consortia/frontend/calendar.py",
     "groupTitle": "CalendarEvent"
-  },
-  {
-    "type": "get",
-    "url": "/api/calendar_event",
-    "title": "日历事件",
-    "name": "CalendarNotices",
-    "group": "CalendarNotice",
-    "version": "1.0.0",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\"2017-10-01\": [\n    \"id\": 12,\n    \"type\": 2,  事件类型,1:产品过期,2:产品分配,3:产品开放,4:自定义\n    \"event_date\": \"2017-10-01\",    # 事件日期\n    \"advanced_days\": 3,     # 提前提醒天数\n    \"repeat_type\": 1,   # 重复类型,1:天，2：周，3：月，4：年\n    \"customer_id\": 33,  # 客户ID\n    \"customer_name\": \"客户姓名\",\n    \"content\": \"事件说明\",\n    \"target_id\": \"321321\",  # 跳转ID\n    \"msg\": \"事件内容\"\n}]",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "../purchasing_consortia/frontend/calendar.py",
-    "groupTitle": "CalendarNotice"
   },
   {
     "type": "get",
