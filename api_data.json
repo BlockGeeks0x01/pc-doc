@@ -73,7 +73,7 @@
     "type": "delete",
     "url": "/api/calendar_event/:id",
     "title": "删除日历事件",
-    "name": "UpdateCalendarEvent",
+    "name": "DeleteCalendarEvent",
     "group": "CalendarEvent",
     "version": "1.0.0",
     "parameter": {
