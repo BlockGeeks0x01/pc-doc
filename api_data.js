@@ -3181,16 +3181,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/user/invite/:id/check",
-    "title": "邀请检查",
-    "name": "InviteCheck",
-    "group": "User",
-    "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
-  },
-  {
-    "type": "get",
     "url": "/api/user/invite/exist",
     "title": "是否存在待处理邀请",
     "name": "InviteExist",
@@ -3200,7 +3190,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "true/false",
+          "content": "{\n    \"inviter\": \"邀请人\",\n    \"company_name\": \"机构名称\"\n}",
           "type": "json"
         }
       ]
