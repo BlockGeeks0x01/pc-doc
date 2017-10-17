@@ -3190,7 +3190,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"inviter\": \"邀请人\",\n    \"company_name\": \"机构名称\"\n}",
+          "content": "{\n    \"id\": 3,\n    \"inviter\": \"邀请人\",\n    \"company_name\": \"机构名称\"\n}",
           "type": "json"
         }
       ]
