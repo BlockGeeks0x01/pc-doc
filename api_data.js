@@ -222,6 +222,106 @@ define({ "api": [
   {
     "type": "get",
     "url": "/",
+    "title": "后台权限",
+    "name": "AdminRole",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "1",
+            "description": "<p>系统管理员</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "2",
+            "description": "<p>用户管理</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "3",
+            "description": "<p>产品管理</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "4",
+            "description": "<p>订单管理</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "5",
+            "description": "<p>运营配置</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "6",
+            "description": "<p>数据统计</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "7",
+            "description": "<p>渠道管理</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "8",
+            "description": "<p>投顾</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "9",
+            "description": "<p>兼职投顾</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "10",
+            "description": "<p>费用管理</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "11",
+            "description": "<p>产品部</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "12",
+            "description": "<p>推荐管理</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
+    "type": "get",
+    "url": "/",
     "title": "错误码",
     "name": "ErrorCode",
     "group": "Constant",
@@ -576,6 +676,173 @@ define({ "api": [
   {
     "type": "get",
     "url": "/",
+    "title": "产品费中的各类角色",
+    "name": "ProductExpenseRole",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "1",
+            "description": "<p>理财师</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "2",
+            "description": "<p>理财师推荐人</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "3",
+            "description": "<p>推荐人介绍人</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "4",
+            "description": "<p>投顾介绍人</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "5",
+            "description": "<p>投顾</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "6",
+            "description": "<p>兼职投顾</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "7",
+            "description": "<p>产品部</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "8",
+            "description": "<p>公司</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
+    "type": "get",
+    "url": "/",
+    "title": "产品费用类型",
+    "name": "ProductExpensesType",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "1",
+            "description": "<p>代理</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "2",
+            "description": "<p>包销</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "3",
+            "description": "<p>裸</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
+    "type": "get",
+    "url": "/",
+    "title": "产品费用结算类型",
+    "name": "ProductSettlementType",
+    "group": "Constant",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "1",
+            "description": "<p>销售</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "2",
+            "description": "<p>发行</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "4",
+            "description": "<p>开发</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "8",
+            "description": "<p>包销</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "16",
+            "description": "<p>管理</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "32",
+            "description": "<p>业绩</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/apidoc.py",
+    "groupTitle": "Constant"
+  },
+  {
+    "type": "get",
+    "url": "/",
     "title": "用户角色",
     "name": "Role",
     "group": "Constant",
@@ -664,43 +931,6 @@ define({ "api": [
   {
     "type": "post",
     "url": "/api/customers",
-    "title": "合并客户",
-    "name": "CreateCustomer",
-    "group": "Customer",
-    "version": "1.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "name",
-            "description": "<p>姓名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "type",
-            "description": "<p>类型</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "remark",
-            "description": "<p>备注</p>"
-          }
-        ]
-      }
-    },
-    "filename": "../purchasing_consortia/frontend/customers.py",
-    "groupTitle": "Customer"
-  },
-  {
-    "type": "post",
-    "url": "/api/customers",
     "title": "创建客户",
     "name": "CreateCustomer",
     "group": "Customer",
@@ -776,6 +1006,43 @@ define({ "api": [
     "type": "post",
     "url": "/api/customers",
     "title": "关联客户",
+    "name": "CreateCustomer",
+    "group": "Customer",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "type",
+            "description": "<p>类型</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "remark",
+            "description": "<p>备注</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "post",
+    "url": "/api/customers",
+    "title": "合并客户",
     "name": "CreateCustomer",
     "group": "Customer",
     "version": "1.0.0",
@@ -992,6 +1259,16 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
+  },
+  {
+    "type": "get",
+    "url": "/api/products/org",
+    "title": "同group往期产品",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/product.py",
+    "group": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_product_py",
+    "groupTitle": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_product_py",
+    "name": "GetApiProductsOrg"
   },
   {
     "type": "post",
@@ -1240,34 +1517,13 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "name",
-            "description": "<p>姓名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "customer_no",
-            "description": "<p>客户编号</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "int",
             "optional": false,
             "field": "precontract_amount",
             "description": "<p>预约额度/万</p>"
           }
         ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "[{\n    \"precontract_amount\": 300,  # 预约额度\n    \"name\": \"客户姓名\"\n}]",
-          "type": "json"
-        }
-      ]
+      }
     },
     "filename": "../purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
@@ -2390,22 +2646,18 @@ define({ "api": [
   {
     "type": "post",
     "url": "/api/products/:pid/follow",
-    "title": "关注/取消关注产品",
+    "title": "关注产品",
     "name": "FollowProduct",
     "group": "Product",
     "version": "1.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "bool",
-            "optional": false,
-            "field": "follow",
-            "description": "<p>是否关注</p>"
-          }
-        ]
-      }
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "1（已有）,\n2（第一次）",
+          "type": "json"
+        }
+      ]
     },
     "filename": "../purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
@@ -2516,7 +2768,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"id\": 1,\n    \"name\": \"产品名称\"\n    \"profit_type\": 1,       # 收益类型 0：固定， 1：浮动,\n    \"type\": 1,              # 产品类型, 1:普通, 2:定期开放\n    \"status\": 1,            # 产品状态 0: 待上架 ，1:筹备中,2:众筹中,3:已完成,-1:项目失败\n    \"minimum_size\": 12,     # 最小募集规模/万\n    \"maximum_size\": 33,     # 最大募集规模/万\n    \"current_precontract_size\": 12, # 当前预约额度/万\n    \"last_pay_time\": \"2017-12-16T16:00:00\",   # 最迟打款时间\n    \"minimum_subscription_size\": 10,    # 起够金额\n    \"strategy\": {\n        \"value\": \"101001\",\n        \"text\": \"市场中性\"\n    },\n    \"fund_manager\": \"管理人\",\n    \"start_date\": \"2017-12-16T16:00:00\",    # 产品成立日\n    \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    \"open_date\": \"2017-12-16T16:00:00\",\t\t# 产品开放日\n    \"open_date_description\": \"产品开放日描述\",\n    \"first_open_date\": \"2017-12-16\":     # 首次开放日\n    \"current_open_date\": \"2017-12-16\":     # 本期开放日\n    \"dividend_type\": 1, # 分红方式: 1份额2金额\n    \"close_time\": \"封闭期\",\n    \"other_time_point\": \"其他时间节点\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"invest_info\": \"投资方向\",\n    \"risk_info\": \"风控措施\",\n    \"fee_info\": \"产品费用\",\n    \"fee_sale\": \"销售费用\",\n    \"max_fee_sale\": \"最高销售费用\",\n    \"currency\": 1,      # 1:人民币, 2:美元\n    \"estimated_dividends_time_description\": \"预计打款时间描述\",\n    \"images\": [\"http://address1\", \"http://address2\"],   # 配图\n    \"tags\": \"tag1,tag2\",    # 标签\n    \"relevant_files\": [{\n        \"id\": 1777,\n        \"name\": \"相关文件1\",\n        \"url\": \"/api/file/3\",\n        \"type\": 1,      # 文件类型, 1推荐,2合同,3:信息披露\n    }]\n    \"remark\": \"备注\",\n    \"max_prospective_earning\": 0.334,   # 最高预期年化收益\n    \"surplus_time\": 2344444,    # 剩余时间/sec\n    \"surplus_size\": 23,         # 剩余额度/万\n    \"followed\": false,          # 是否关注\n    \"repayment_source\": \"还款来源\",\n    \"hide\": true,       # 是否隐藏\n    \"increment_size\": 3,        # 递增金额\n    \"duration\": \"3 - 18 个月\",    # 期限\n    \"profit_interval\": [{       # 收益区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"prospective_earning\": 0.02 # 预期年化收益\n        \"duration\": 23,             # 期限\n        \"expire_time\": \"2017-12-16T16:00:00\",   # 过期时间\n        \"description\": \"收益描述\"\n    }],\n    \"major_timeline\": [             # 产品流程\n          {\n            \"cnt\": 0,               # 子流程数量\n            \"name\": \"项目完成\",     # 进度名称\n            \"nodes\": [],            # 子流程\n            \"status\": 0             # 进度状态 0:待进行,1:进行中,2:已结束,3:失败\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"开始采购\",\n            \"nodes\": [],\n            \"status\": 0\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"尽调研究\",\n            \"nodes\": [],\n            \"status\": 0\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"项目录入\",\n            \"nodes\": [\n              {\n                \"content\": \"gCBO8i4aj3fk\",      # 进度内容\n                \"created_time\": \"2017-03-22T17:08:20\",\n                \"id\": 2,\n                \"type\": 1,              # 节点类型, 1:普通, 2:可参与\n                \"participation_status\": 0       # 用户参与状态, 0:待审核，1:审核通过, 2:未参与\n                \"status\": 0             # 进度状态 0:待进行,1:进行中,2:已结束,3:失败\n              }\n            ],\n            \"status\": 1,\n            \"time\": \"2017-03-22T17:08:20\"       # 时间\n          }\n    ],\n    \"sell_status\": 1,       # 1:停售, 2:在售\n    \"count_day_num\": 365,   # 计息规则\n    \"distribution_period\": 3,   # 分配周期\n    \"open_date_info\": \"开放日说明\"\n    \"period_type\": 1,           # 定期开放类型,1:自动,2:手动\n    \"period\": 3,                # 开放周期\n    \"period_unit\": 1,           # 开放周期单位,1:月，2：周\n    \"distributions\": [{         # 手动分配记录\n        \"id\": 1\n        \"date\": \"2017-12-11\",   # 分配日\n        \"redeem_percent\": 3.11  # 本金分配比例\n        \"created_time\": \"2017-03-22T17:08:20\"\n    }]\n}",
+          "content": "{\n    \"id\": 1,\n    \"name\": \"产品名称\"\n    \"profit_type\": 1,       # 收益类型 0：固定， 1：浮动,\n    \"type\": 1,              # 产品类型, 1:普通, 2:定期开放\n    \"status\": 1,            # 产品状态 0: 待上架 ，1:筹备中,2:众筹中,3:已完成,-1:项目失败\n    \"minimum_size\": 12,     # 最小募集规模/万\n    \"maximum_size\": 33,     # 最大募集规模/万\n    \"current_precontract_size\": 12, # 当前预约额度/万\n    \"last_pay_time\": \"2017-12-16T16:00:00\",   # 最迟打款时间\n    \"minimum_subscription_size\": 10,    # 起够金额\n    \"strategy\": {\n        \"value\": \"101001\",\n        \"text\": \"市场中性\"\n    },\n    \"fund_manager\": \"管理人\",\n    \"start_date\": \"2017-12-16T16:00:00\",    # 产品成立日\n    \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    \"open_date\": \"2017-12-16T16:00:00\",\t\t# 产品开放日\n    \"open_date_description\": \"产品开放日描述\",\n    \"first_open_date\": \"2017-12-16\":     # 首次开放日\n    \"current_open_date\": \"2017-12-16\":     # 本期开放日\n    \"dividend_type\": 1, # 分红方式: 1份额2金额\n    \"close_time\": \"封闭期\",\n    \"other_time_point\": \"其他时间节点\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"invest_info\": \"投资方向\",\n    \"risk_info\": \"风控措施\",\n    \"fee_info\": \"产品费用\",\n    \"fee_sale\": \"销售费用\",\n    \"max_fee_sale\": \"最高销售费用\",\n    \"currency\": 1,      # 1:人民币, 2:美元\n    \"estimated_dividends_time_description\": \"预计打款时间描述\",\n    \"images\": [\"http://address1\", \"http://address2\"],   # 配图\n    \"tags\": \"tag1,tag2\",    # 标签\n    \"relevant_files\": [{\n        \"id\": 1777,\n        \"name\": \"相关文件1\",\n        \"url\": \"/api/file/3\",\n        \"type\": 1,      # 文件类型, 1推荐,2合同,3:信息披露\n    }]\n    \"remark\": \"备注\",\n    \"max_prospective_earning\": 0.334,   # 最高预期年化收益\n    \"surplus_time\": 2344444,    # 剩余时间/sec\n    \"surplus_size\": 23,         # 剩余额度/万\n    \"followed\": false,          # 是否关注\n    \"repayment_source\": \"还款来源\",\n    \"hide\": true,       # 是否隐藏\n    \"increment_size\": 3,        # 递增金额\n    \"duration\": \"3 - 18 个月\",    # 期限\n    \"profit_interval\": [{       # 收益区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"prospective_earning\": 0.02 # 预期年化收益\n        \"duration\": 23,             # 期限\n        \"expire_time\": \"2017-12-16T16:00:00\",   # 过期时间\n        \"description\": \"收益描述\",\n        \"settlement_days\": 33,      # 结算天数\n        \"sales_expense\": 0.33,      # 销售费用比例\n    }],\n    \"expenses\": [{       # 费用区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"total\": 0.02 # 总费用\n        \"exploit\": 23,              # 开发\n        \"distribution\": 33,   # 发行\n        \"underwrite\": 9,    # 包销\n        \"sales\": 33,      # 销售费\n        \"management\": 0.33,      # 管理费\n        \"management_sales\": 0.33,      # 管理销售费用\n        \"management_exploit\": 0.33,      # 管理开发费用\n        \"management_underwrite\": 0.33,      # 管理包销费用\n        \"management_distribution\": 0.33,      # 管理发行费用\n        \"performance\": 0.33,      # 业绩费\n        \"performance_sales\": 0.33,      # 业绩销售费用\n        \"performance_exploit\": 0.33,      # 业绩开发费用\n        \"performance_underwrite\": 0.33,      # 业绩包销费用\n        \"performance_distribution\": 0.33,      # 业绩发行费用\n    }],\n    \"sell_status\": 1,       # 1:停售, 2:在售\n    \"count_day_num\": 365,   # 计息规则\n    \"distribution_period\": 3,   # 分配周期\n    \"open_date_info\": \"开放日说明\"\n    \"period\": 3,                # 开放周期\n    \"period_unit\": 1,           # 开放周期单位,1:月，2：周\n    \"distributions\": [{         # 手动分配记录\n        \"id\": 1\n        \"date\": \"2017-12-11\",   # 分配日\n        \"redeem_percent\": 3.11  # 本金分配比例\n        \"created_time\": \"2017-03-22T17:08:20\"\n    }],\n    \"expenses_type\": 3, # 费用类型\n    \"tax_rate\": 3.33    # 费率\n}",
           "type": "json"
         }
       ]
@@ -2616,50 +2868,6 @@ define({ "api": [
     "groupTitle": "Product"
   },
   {
-    "type": "patch",
-    "url": "/api/products/activity/:node_id",
-    "title": "参与/取消参与产品节点活动",
-    "name": "ParticipateNode",
-    "group": "Product",
-    "version": "1.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "bool",
-            "optional": false,
-            "field": "participate",
-            "description": "<p>参与/取消</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "name",
-            "description": "<p>姓名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "mobile",
-            "description": "<p>联系方式</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{\n    \"participate\": true,\n    \"name\": \"小明\",\n    \"mobile\": \"15068975727\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "../purchasing_consortia/frontend/product.py",
-    "groupTitle": "Product"
-  },
-  {
     "type": "get",
     "url": "/api/products/:pid/brief",
     "title": "产品简要信息",
@@ -2691,7 +2899,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"id\": 1,\n    \"name\": \"产品名称\"\n    \"profit_type\": 1,       # 收益类型 0：固定， 1：浮动,\n    \"type\": 1,              # 产品类型, 1:普通, 2:定期开放\n    \"status\": 1,            # 产品状态 0: 待上架 ，1:筹备中,2:众筹中,3:已完成,-1:项目失败\n    \"minimum_size\": 12,     # 最小募集规模/万\n    \"maximum_size\": 33,     # 最大募集规模/万\n    \"current_precontract_size\": 12, # 当前预约额度/万\n    \"last_pay_time\": \"2017-12-16T16:00:00\",   # 最迟打款时间\n    \"minimum_subscription_size\": 10,    # 起够金额\n    \"strategy\": {\n        \"value\": \"101001\",\n        \"text\": \"市场中性\"\n    },\n    \"fund_manager\": \"管理人\",\n    \"start_date\": \"2017-12-16T16:00:00\",    # 产品成立日\n    \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    \"open_date\": \"2017-12-16T16:00:00\",\t\t# 产品开放日\n    \"open_date_description\": \"产品开放日描述\",\n    \"first_open_date\": \"2017-12-16\":     # 首次开放日\n    \"current_open_date\": \"2017-12-16\":     # 本期开放日\n    \"dividend_type\": 1, # 分红方式: 1份额2金额\n    \"close_time\": \"封闭期\",\n    \"other_time_point\": \"其他时间节点\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"invest_info\": \"投资方向\",\n    \"risk_info\": \"风控措施\",\n    \"fee_info\": \"产品费用\",\n    \"fee_sale\": \"销售费用\",\n    \"max_fee_sale\": \"最高销售费用\",\n    \"currency\": 1,      # 1:人民币, 2:美元\n    \"estimated_dividends_time_description\": \"预计打款时间描述\",\n    \"images\": [\"http://address1\", \"http://address2\"],   # 配图\n    \"tags\": \"tag1,tag2\",    # 标签\n    \"relevant_files\": [{\n        \"id\": 1777,\n        \"name\": \"相关文件1\",\n        \"url\": \"/api/file/3\",\n        \"type\": 1,      # 文件类型, 1推荐,2合同,3:信息披露\n    }]\n    \"remark\": \"备注\",\n    \"max_prospective_earning\": 0.334,   # 最高预期年化收益\n    \"surplus_time\": 2344444,    # 剩余时间/sec\n    \"surplus_size\": 23,         # 剩余额度/万\n    \"followed\": false,          # 是否关注\n    \"repayment_source\": \"还款来源\",\n    \"hide\": true,       # 是否隐藏\n    \"increment_size\": 3,        # 递增金额\n    \"duration\": \"3 - 18 个月\",    # 期限\n    \"profit_interval\": [{       # 收益区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"prospective_earning\": 0.02 # 预期年化收益\n        \"duration\": 23,             # 期限\n        \"expire_time\": \"2017-12-16T16:00:00\",   # 过期时间\n        \"description\": \"收益描述\"\n    }],\n    \"major_timeline\": [             # 产品流程\n          {\n            \"cnt\": 0,               # 子流程数量\n            \"name\": \"项目完成\",     # 进度名称\n            \"nodes\": [],            # 子流程\n            \"status\": 0             # 进度状态 0:待进行,1:进行中,2:已结束,3:失败\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"开始采购\",\n            \"nodes\": [],\n            \"status\": 0\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"尽调研究\",\n            \"nodes\": [],\n            \"status\": 0\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"项目录入\",\n            \"nodes\": [\n              {\n                \"content\": \"gCBO8i4aj3fk\",      # 进度内容\n                \"created_time\": \"2017-03-22T17:08:20\",\n                \"id\": 2,\n                \"type\": 1,              # 节点类型, 1:普通, 2:可参与\n                \"participation_status\": 0       # 用户参与状态, 0:待审核，1:审核通过, 2:未参与\n                \"status\": 0             # 进度状态 0:待进行,1:进行中,2:已结束,3:失败\n              }\n            ],\n            \"status\": 1,\n            \"time\": \"2017-03-22T17:08:20\"       # 时间\n          }\n    ],\n    \"sell_status\": 1,       # 1:停售, 2:在售\n    \"count_day_num\": 365,   # 计息规则\n    \"distribution_period\": 3,   # 分配周期\n    \"open_date_info\": \"开放日说明\"\n    \"period_type\": 1,           # 定期开放类型,1:自动,2:手动\n    \"period\": 3,                # 开放周期\n    \"period_unit\": 1,           # 开放周期单位,1:月，2：周\n    \"distributions\": [{         # 手动分配记录\n        \"id\": 1\n        \"date\": \"2017-12-11\",   # 分配日\n        \"redeem_percent\": 3.11  # 本金分配比例\n        \"created_time\": \"2017-03-22T17:08:20\"\n    }]\n}",
+          "content": "{\n    \"id\": 1,\n    \"name\": \"产品名称\"\n    \"profit_type\": 1,       # 收益类型 0：固定， 1：浮动,\n    \"type\": 1,              # 产品类型, 1:普通, 2:定期开放\n    \"status\": 1,            # 产品状态 0: 待上架 ，1:筹备中,2:众筹中,3:已完成,-1:项目失败\n    \"minimum_size\": 12,     # 最小募集规模/万\n    \"maximum_size\": 33,     # 最大募集规模/万\n    \"current_precontract_size\": 12, # 当前预约额度/万\n    \"last_pay_time\": \"2017-12-16T16:00:00\",   # 最迟打款时间\n    \"minimum_subscription_size\": 10,    # 起够金额\n    \"strategy\": {\n        \"value\": \"101001\",\n        \"text\": \"市场中性\"\n    },\n    \"fund_manager\": \"管理人\",\n    \"start_date\": \"2017-12-16T16:00:00\",    # 产品成立日\n    \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    \"open_date\": \"2017-12-16T16:00:00\",\t\t# 产品开放日\n    \"open_date_description\": \"产品开放日描述\",\n    \"first_open_date\": \"2017-12-16\":     # 首次开放日\n    \"current_open_date\": \"2017-12-16\":     # 本期开放日\n    \"dividend_type\": 1, # 分红方式: 1份额2金额\n    \"close_time\": \"封闭期\",\n    \"other_time_point\": \"其他时间节点\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"invest_info\": \"投资方向\",\n    \"risk_info\": \"风控措施\",\n    \"fee_info\": \"产品费用\",\n    \"fee_sale\": \"销售费用\",\n    \"max_fee_sale\": \"最高销售费用\",\n    \"currency\": 1,      # 1:人民币, 2:美元\n    \"estimated_dividends_time_description\": \"预计打款时间描述\",\n    \"images\": [\"http://address1\", \"http://address2\"],   # 配图\n    \"tags\": \"tag1,tag2\",    # 标签\n    \"relevant_files\": [{\n        \"id\": 1777,\n        \"name\": \"相关文件1\",\n        \"url\": \"/api/file/3\",\n        \"type\": 1,      # 文件类型, 1推荐,2合同,3:信息披露\n    }]\n    \"remark\": \"备注\",\n    \"max_prospective_earning\": 0.334,   # 最高预期年化收益\n    \"surplus_time\": 2344444,    # 剩余时间/sec\n    \"surplus_size\": 23,         # 剩余额度/万\n    \"followed\": false,          # 是否关注\n    \"repayment_source\": \"还款来源\",\n    \"hide\": true,       # 是否隐藏\n    \"increment_size\": 3,        # 递增金额\n    \"duration\": \"3 - 18 个月\",    # 期限\n    \"profit_interval\": [{       # 收益区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"prospective_earning\": 0.02 # 预期年化收益\n        \"duration\": 23,             # 期限\n        \"expire_time\": \"2017-12-16T16:00:00\",   # 过期时间\n        \"description\": \"收益描述\",\n        \"settlement_days\": 33,      # 结算天数\n        \"sales_expense\": 0.33,      # 销售费用比例\n    }],\n    \"expenses\": [{       # 费用区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"total\": 0.02 # 总费用\n        \"exploit\": 23,              # 开发\n        \"distribution\": 33,   # 发行\n        \"underwrite\": 9,    # 包销\n        \"sales\": 33,      # 销售费\n        \"management\": 0.33,      # 管理费\n        \"management_sales\": 0.33,      # 管理销售费用\n        \"management_exploit\": 0.33,      # 管理开发费用\n        \"management_underwrite\": 0.33,      # 管理包销费用\n        \"management_distribution\": 0.33,      # 管理发行费用\n        \"performance\": 0.33,      # 业绩费\n        \"performance_sales\": 0.33,      # 业绩销售费用\n        \"performance_exploit\": 0.33,      # 业绩开发费用\n        \"performance_underwrite\": 0.33,      # 业绩包销费用\n        \"performance_distribution\": 0.33,      # 业绩发行费用\n    }],\n    \"sell_status\": 1,       # 1:停售, 2:在售\n    \"count_day_num\": 365,   # 计息规则\n    \"distribution_period\": 3,   # 分配周期\n    \"open_date_info\": \"开放日说明\"\n    \"period\": 3,                # 开放周期\n    \"period_unit\": 1,           # 开放周期单位,1:月，2：周\n    \"distributions\": [{         # 手动分配记录\n        \"id\": 1\n        \"date\": \"2017-12-11\",   # 分配日\n        \"redeem_percent\": 3.11  # 本金分配比例\n        \"created_time\": \"2017-03-22T17:08:20\"\n    }],\n    \"expenses_type\": 3, # 费用类型\n    \"tax_rate\": 3.33    # 费率\n}",
           "type": "json"
         }
       ]
@@ -2707,7 +2915,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"content\": \"gCBO8i4aj3fk\",      # 进度内容\n    \"created_time\": \"2017-03-22T17:08:20\",\n    \"id\": 2,\n    \"type\": 1,              # 节点类型, 1:普通, 2:可参与\n    \"participation_status\": 0       # 用户参与状态, 0:待审核，1:审核通过, 2:未参与\n}]",
+          "content": "[{\n    \"content\": \"gCBO8i4aj3fk\",      # 进度内容\n    \"created_time\": \"2017-03-22T17:08:20\",\n    \"id\": 2,\n}]",
           "type": "json"
         }
       ]
@@ -2864,7 +3072,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"id\": 1,\n    \"name\": \"产品名称\"\n    \"profit_type\": 1,       # 收益类型 0：固定， 1：浮动,\n    \"type\": 1,              # 产品类型, 1:普通, 2:定期开放\n    \"status\": 1,            # 产品状态 0: 待上架 ，1:筹备中,2:众筹中,3:已完成,-1:项目失败\n    \"minimum_size\": 12,     # 最小募集规模/万\n    \"maximum_size\": 33,     # 最大募集规模/万\n    \"current_precontract_size\": 12, # 当前预约额度/万\n    \"last_pay_time\": \"2017-12-16T16:00:00\",   # 最迟打款时间\n    \"minimum_subscription_size\": 10,    # 起够金额\n    \"strategy\": {\n        \"value\": \"101001\",\n        \"text\": \"市场中性\"\n    },\n    \"fund_manager\": \"管理人\",\n    \"start_date\": \"2017-12-16T16:00:00\",    # 产品成立日\n    \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    \"open_date\": \"2017-12-16T16:00:00\",\t\t# 产品开放日\n    \"open_date_description\": \"产品开放日描述\",\n    \"first_open_date\": \"2017-12-16\":     # 首次开放日\n    \"current_open_date\": \"2017-12-16\":     # 本期开放日\n    \"dividend_type\": 1, # 分红方式: 1份额2金额\n    \"close_time\": \"封闭期\",\n    \"other_time_point\": \"其他时间节点\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"invest_info\": \"投资方向\",\n    \"risk_info\": \"风控措施\",\n    \"fee_info\": \"产品费用\",\n    \"fee_sale\": \"销售费用\",\n    \"max_fee_sale\": \"最高销售费用\",\n    \"currency\": 1,      # 1:人民币, 2:美元\n    \"estimated_dividends_time_description\": \"预计打款时间描述\",\n    \"images\": [\"http://address1\", \"http://address2\"],   # 配图\n    \"tags\": \"tag1,tag2\",    # 标签\n    \"relevant_files\": [{\n        \"id\": 1777,\n        \"name\": \"相关文件1\",\n        \"url\": \"/api/file/3\",\n        \"type\": 1,      # 文件类型, 1推荐,2合同,3:信息披露\n    }]\n    \"remark\": \"备注\",\n    \"max_prospective_earning\": 0.334,   # 最高预期年化收益\n    \"surplus_time\": 2344444,    # 剩余时间/sec\n    \"surplus_size\": 23,         # 剩余额度/万\n    \"followed\": false,          # 是否关注\n    \"repayment_source\": \"还款来源\",\n    \"hide\": true,       # 是否隐藏\n    \"increment_size\": 3,        # 递增金额\n    \"duration\": \"3 - 18 个月\",    # 期限\n    \"profit_interval\": [{       # 收益区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"prospective_earning\": 0.02 # 预期年化收益\n        \"duration\": 23,             # 期限\n        \"expire_time\": \"2017-12-16T16:00:00\",   # 过期时间\n        \"description\": \"收益描述\"\n    }],\n    \"major_timeline\": [             # 产品流程\n          {\n            \"cnt\": 0,               # 子流程数量\n            \"name\": \"项目完成\",     # 进度名称\n            \"nodes\": [],            # 子流程\n            \"status\": 0             # 进度状态 0:待进行,1:进行中,2:已结束,3:失败\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"开始采购\",\n            \"nodes\": [],\n            \"status\": 0\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"尽调研究\",\n            \"nodes\": [],\n            \"status\": 0\n          },\n          {\n            \"cnt\": 0,\n            \"name\": \"项目录入\",\n            \"nodes\": [\n              {\n                \"content\": \"gCBO8i4aj3fk\",      # 进度内容\n                \"created_time\": \"2017-03-22T17:08:20\",\n                \"id\": 2,\n                \"type\": 1,              # 节点类型, 1:普通, 2:可参与\n                \"participation_status\": 0       # 用户参与状态, 0:待审核，1:审核通过, 2:未参与\n                \"status\": 0             # 进度状态 0:待进行,1:进行中,2:已结束,3:失败\n              }\n            ],\n            \"status\": 1,\n            \"time\": \"2017-03-22T17:08:20\"       # 时间\n          }\n    ],\n    \"sell_status\": 1,       # 1:停售, 2:在售\n    \"count_day_num\": 365,   # 计息规则\n    \"distribution_period\": 3,   # 分配周期\n    \"open_date_info\": \"开放日说明\"\n    \"period_type\": 1,           # 定期开放类型,1:自动,2:手动\n    \"period\": 3,                # 开放周期\n    \"period_unit\": 1,           # 开放周期单位,1:月，2：周\n    \"distributions\": [{         # 手动分配记录\n        \"id\": 1\n        \"date\": \"2017-12-11\",   # 分配日\n        \"redeem_percent\": 3.11  # 本金分配比例\n        \"created_time\": \"2017-03-22T17:08:20\"\n    }]\n}",
+          "content": "{\n    \"id\": 1,\n    \"name\": \"产品名称\"\n    \"profit_type\": 1,       # 收益类型 0：固定， 1：浮动,\n    \"type\": 1,              # 产品类型, 1:普通, 2:定期开放\n    \"status\": 1,            # 产品状态 0: 待上架 ，1:筹备中,2:众筹中,3:已完成,-1:项目失败\n    \"minimum_size\": 12,     # 最小募集规模/万\n    \"maximum_size\": 33,     # 最大募集规模/万\n    \"current_precontract_size\": 12, # 当前预约额度/万\n    \"last_pay_time\": \"2017-12-16T16:00:00\",   # 最迟打款时间\n    \"minimum_subscription_size\": 10,    # 起够金额\n    \"strategy\": {\n        \"value\": \"101001\",\n        \"text\": \"市场中性\"\n    },\n    \"fund_manager\": \"管理人\",\n    \"start_date\": \"2017-12-16T16:00:00\",    # 产品成立日\n    \"end_date\": \"2017-12-16T16:00:00\",    # 产品结束日\n    \"open_date\": \"2017-12-16T16:00:00\",\t\t# 产品开放日\n    \"open_date_description\": \"产品开放日描述\",\n    \"first_open_date\": \"2017-12-16\":     # 首次开放日\n    \"current_open_date\": \"2017-12-16\":     # 本期开放日\n    \"dividend_type\": 1, # 分红方式: 1份额2金额\n    \"close_time\": \"封闭期\",\n    \"other_time_point\": \"其他时间节点\",\n    \"collect_account_name\": \"募集账户名\",\n    \"collect_account\": \"募集账号\",\n    \"bank_name\": \"开户行\",\n    \"remit_remark\": \"打款备注\",\n    \"invest_info\": \"投资方向\",\n    \"risk_info\": \"风控措施\",\n    \"fee_info\": \"产品费用\",\n    \"fee_sale\": \"销售费用\",\n    \"max_fee_sale\": \"最高销售费用\",\n    \"currency\": 1,      # 1:人民币, 2:美元\n    \"estimated_dividends_time_description\": \"预计打款时间描述\",\n    \"images\": [\"http://address1\", \"http://address2\"],   # 配图\n    \"tags\": \"tag1,tag2\",    # 标签\n    \"relevant_files\": [{\n        \"id\": 1777,\n        \"name\": \"相关文件1\",\n        \"url\": \"/api/file/3\",\n        \"type\": 1,      # 文件类型, 1推荐,2合同,3:信息披露\n    }]\n    \"remark\": \"备注\",\n    \"max_prospective_earning\": 0.334,   # 最高预期年化收益\n    \"surplus_time\": 2344444,    # 剩余时间/sec\n    \"surplus_size\": 23,         # 剩余额度/万\n    \"followed\": false,          # 是否关注\n    \"repayment_source\": \"还款来源\",\n    \"hide\": true,       # 是否隐藏\n    \"increment_size\": 3,        # 递增金额\n    \"duration\": \"3 - 18 个月\",    # 期限\n    \"profit_interval\": [{       # 收益区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"prospective_earning\": 0.02 # 预期年化收益\n        \"duration\": 23,             # 期限\n        \"expire_time\": \"2017-12-16T16:00:00\",   # 过期时间\n        \"description\": \"收益描述\",\n        \"settlement_days\": 33,      # 结算天数\n        \"sales_expense\": 0.33,      # 销售费用比例\n    }],\n    \"expenses\": [{       # 费用区间\n        \"condition_ceiling\": 133,   # 金额上限\n        \"condition_floor\": 21,      # 金额下线\n        \"total\": 0.02 # 总费用\n        \"exploit\": 23,              # 开发\n        \"distribution\": 33,   # 发行\n        \"underwrite\": 9,    # 包销\n        \"sales\": 33,      # 销售费\n        \"management\": 0.33,      # 管理费\n        \"management_sales\": 0.33,      # 管理销售费用\n        \"management_exploit\": 0.33,      # 管理开发费用\n        \"management_underwrite\": 0.33,      # 管理包销费用\n        \"management_distribution\": 0.33,      # 管理发行费用\n        \"performance\": 0.33,      # 业绩费\n        \"performance_sales\": 0.33,      # 业绩销售费用\n        \"performance_exploit\": 0.33,      # 业绩开发费用\n        \"performance_underwrite\": 0.33,      # 业绩包销费用\n        \"performance_distribution\": 0.33,      # 业绩发行费用\n    }],\n    \"sell_status\": 1,       # 1:停售, 2:在售\n    \"count_day_num\": 365,   # 计息规则\n    \"distribution_period\": 3,   # 分配周期\n    \"open_date_info\": \"开放日说明\"\n    \"period\": 3,                # 开放周期\n    \"period_unit\": 1,           # 开放周期单位,1:月，2：周\n    \"distributions\": [{         # 手动分配记录\n        \"id\": 1\n        \"date\": \"2017-12-11\",   # 分配日\n        \"redeem_percent\": 3.11  # 本金分配比例\n        \"created_time\": \"2017-03-22T17:08:20\"\n    }],\n    \"expenses_type\": 3, # 费用类型\n    \"tax_rate\": 3.33    # 费率\n}",
           "type": "json"
         }
       ]
@@ -3812,44 +4020,5 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
-  },
-  {
-    "type": "get",
-    "url": "/api/user/profit",
-    "title": "采购分成列表",
-    "name": "UserProfitList",
-    "group": "User",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "[{\n    \"order_no\": \"83092180982193012\",\n    \"product_name\": \"产品名称A\",\n    \"product_id\": 33,\n    \"amount\": 33,\n    \"currency\": 1,  # 1 人民币,2:美金\n    \"actual_time\": \"2015-12-11\",     # 实际打款时间\n}]",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "page",
-            "description": "<p>第几页</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "per_page",
-            "description": "<p>每页数量</p>"
-          }
-        ]
-      }
-    }
   }
 ] });
