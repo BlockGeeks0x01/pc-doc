@@ -931,6 +931,43 @@
   {
     "type": "post",
     "url": "/api/customers",
+    "title": "合并客户",
+    "name": "CreateCustomer",
+    "group": "Customer",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "type",
+            "description": "<p>类型</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "remark",
+            "description": "<p>备注</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "post",
+    "url": "/api/customers",
     "title": "创建客户",
     "name": "CreateCustomer",
     "group": "Customer",
@@ -1006,43 +1043,6 @@
     "type": "post",
     "url": "/api/customers",
     "title": "关联客户",
-    "name": "CreateCustomer",
-    "group": "Customer",
-    "version": "1.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "name",
-            "description": "<p>姓名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "type",
-            "description": "<p>类型</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "remark",
-            "description": "<p>备注</p>"
-          }
-        ]
-      }
-    },
-    "filename": "../purchasing_consortia/frontend/customers.py",
-    "groupTitle": "Customer"
-  },
-  {
-    "type": "post",
-    "url": "/api/customers",
-    "title": "合并客户",
     "name": "CreateCustomer",
     "group": "Customer",
     "version": "1.0.0",
@@ -1942,7 +1942,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"date\": \"2017-12-01\",\n    \"book_profit\": {\n        \"order\": 300,   # 订单\n        \"bank\": 300,    # 银行\n        \"csi300\": 229   # 沪深300\n    }\n}]",
+          "content": "[{\n    \"date\": \"2017-12-01\",\n    \"book_profit\": {\n        \"order\": 300,   # 订单\n        \"bank\": 300,    # 银行\n        \"csi300\": 229   # 沪深300\n        \"trust\": 33,    # 信托\n    }\n}]",
           "type": "json"
         }
       ]
@@ -1981,7 +1981,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"date\": \"2017-12-01\",\n    \"book_profit\": {\n        \"order\": 300,   # 订单/元\n        \"bank\": 300,    # 银行/元\n        \"csi300\": 229   # 沪深300/元\n    }\n}]",
+          "content": "[{\n    \"date\": \"2017-12-01\",\n    \"book_profit\": {\n        \"order\": 300,   # 订单/元\n        \"bank\": 300,    # 银行/元\n        \"csi300\": 229   # 沪深300/元\n        \"trust\":333,    # 信托/元\n    }\n}]",
           "type": "json"
         }
       ]
@@ -3337,7 +3337,7 @@
     "name": "server_time",
     "group": "Time",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/time.py",
+    "filename": "../purchasing_consortia/frontend/maice_time.py",
     "groupTitle": "Time"
   },
   {
@@ -3565,36 +3565,6 @@
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
-  },
-  {
-    "type": "post",
-    "url": "/api/user/login",
-    "title": "用户token登录",
-    "name": "Login",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "mobile",
-            "description": "<p>手机号</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "password",
-            "description": "<p>密码</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
