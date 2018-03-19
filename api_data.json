@@ -1124,7 +1124,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "[{\n    \"date\": \"2017-12-01\",\n    \"book_profit\": {\n        \"order\": 300,   # 订单\n        \"bank\": 300,    # 银行\n        \"csi300\": 229   # 沪深300\n    }\n}]",
+          "content": "[{\n    \"date\": \"2017-12-01\",\n    \"book_profit\": {\n        \"order\": 300,   # 订单\n        \"bank\": 300,    # 银行\n        \"csi300\": 229   # 沪深300\n        \"trust\": 33,    # 信托\n    }\n}]",
           "type": "json"
         }
       ]
@@ -2060,6 +2060,13 @@
             "optional": true,
             "field": "range",
             "description": "<p>时间段</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "source",
+            "description": "<p>来源，1:分配,2:赎回,3:开放</p>"
           }
         ]
       }
