@@ -1261,14 +1261,14 @@ define({ "api": [
     "groupTitle": "Customer"
   },
   {
-    "type": "get",
-    "url": "/api/products/org",
-    "title": "同group往期产品",
+    "type": "",
+    "url": "产品的募集记录",
+    "title": "",
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/product.py",
     "group": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_product_py",
     "groupTitle": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_product_py",
-    "name": "GetApiProductsOrg"
+    "name": ""
   },
   {
     "type": "post",
@@ -2066,7 +2066,7 @@ define({ "api": [
             "type": "int",
             "optional": true,
             "field": "source",
-            "description": "<p>来源，1:分配,2:赎回,3:开放</p>"
+            "description": "<p>来源，0:全部,1:分配,2:赎回,3:开放</p>"
           }
         ]
       }
@@ -2203,13 +2203,6 @@ define({ "api": [
             "group": "Parameter",
             "type": "int",
             "optional": true,
-            "field": "source",
-            "description": "<p>来源,1:麦策2:机构</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
             "field": "channel_user_id",
             "description": "<p>推荐人查看的理财师ID</p>"
           },
@@ -2323,19 +2316,15 @@ define({ "api": [
   {
     "type": "get",
     "url": "/api/orders/org",
-    "title": "机构订单列表",
+    "title": "订单列表",
     "name": "OrgOrders",
     "group": "Order",
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order",
     "parameter": {
       "fields": {
         "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "source",
-            "description": "<p>来源,1:麦策2:机构</p>"
-          },
           {
             "group": "Parameter",
             "type": "int",
@@ -2353,9 +2342,6 @@ define({ "api": [
         ]
       }
     },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
-    "groupTitle": "Order",
     "success": {
       "examples": [
         {
@@ -2559,7 +2545,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    }\n}",
+          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"is_available\": true,   # 是否有权使用系统\n    \"available_status\": 1001,   # 有效状态, 0:无效,1000~2000:试用期,2000~3000:付费期\n    \"expire_time\": \"2017-03-20T12:00:00\"    # 到期时间\n}",
           "type": "json"
         }
       ]
@@ -2583,6 +2569,13 @@ define({ "api": [
             "optional": false,
             "field": "logo",
             "description": "<p>图标</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "available_status",
+            "description": "<p>有效状态, 1:试用</p>"
           }
         ]
       }
@@ -2702,13 +2695,6 @@ define({ "api": [
             "group": "Parameter",
             "type": "int",
             "optional": true,
-            "field": "source",
-            "description": "<p>来源,1:麦策2:机构</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
             "field": "profit_type",
             "description": "<p>收益类型,0：固定，1：浮动</p>"
           },
@@ -2810,13 +2796,6 @@ define({ "api": [
     "parameter": {
       "fields": {
         "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "source",
-            "description": "<p>来源,1:麦策2:机构</p>"
-          },
           {
             "group": "Parameter",
             "type": "int",
@@ -2937,6 +2916,26 @@ define({ "api": [
     "title": "产品收益区间",
     "name": "ProductProfitIntervals",
     "group": "Product",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "unique_duration",
+            "description": "<p>1:期限去重，0：不去重</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "buy_time",
+            "description": "<p>计息日</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -3095,13 +3094,6 @@ define({ "api": [
     "parameter": {
       "fields": {
         "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": true,
-            "field": "source",
-            "description": "<p>来源,1:麦策2:机构</p>"
-          },
           {
             "group": "Parameter",
             "type": "string",
