@@ -607,6 +607,13 @@ define({ "api": [
             "optional": false,
             "field": "150001",
             "description": "<p>无法删除存在订单的客户</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "190001",
+            "description": "<p>付费名额不足</p>"
           }
         ]
       }
@@ -931,43 +938,6 @@ define({ "api": [
   {
     "type": "post",
     "url": "/api/customers",
-    "title": "合并客户",
-    "name": "CreateCustomer",
-    "group": "Customer",
-    "version": "1.0.0",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "name",
-            "description": "<p>姓名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "type",
-            "description": "<p>类型</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "remark",
-            "description": "<p>备注</p>"
-          }
-        ]
-      }
-    },
-    "filename": "../purchasing_consortia/frontend/customers.py",
-    "groupTitle": "Customer"
-  },
-  {
-    "type": "post",
-    "url": "/api/customers",
     "title": "创建客户",
     "name": "CreateCustomer",
     "group": "Customer",
@@ -1043,6 +1013,43 @@ define({ "api": [
     "type": "post",
     "url": "/api/customers",
     "title": "关联客户",
+    "name": "CreateCustomer",
+    "group": "Customer",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "type",
+            "description": "<p>类型</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "remark",
+            "description": "<p>备注</p>"
+          }
+        ]
+      }
+    },
+    "filename": "../purchasing_consortia/frontend/customers.py",
+    "groupTitle": "Customer"
+  },
+  {
+    "type": "post",
+    "url": "/api/customers",
+    "title": "合并客户",
     "name": "CreateCustomer",
     "group": "Customer",
     "version": "1.0.0",
@@ -2545,7 +2552,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"is_available\": true,   # 是否有权使用系统\n    \"available_status\": 1001,   # 有效状态, 0:无效,1000~2000:试用期,2000~3000:付费期\n    \"expire_time\": \"2017-03-20T12:00:00\"    # 到期时间\n}",
+          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"is_available\": true,   # 是否有权使用系统\n    \"available_status\": 1001,   # 有效状态, 0:无效,1000~2000:试用期,2000~3000:付费期\n    \"expire_time\": \"2017-03-20T12:00:00\"    # 到期时间\n    \"paid_type\": 1, # 付费类型, 1:人数，2:机构\n    \"total_paid_num\": 13,   # 付费名额总量\n    \"remained_paid_num\": 2  # 剩余付费名额\n}",
           "type": "json"
         }
       ]
@@ -2583,6 +2590,92 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "../purchasing_consortia/frontend/org.py",
     "groupTitle": "Org"
+  },
+  {
+    "type": "get",
+    "url": "/api/pay/check_order/:sn",
+    "title": "检查支付订单状态",
+    "name": "CheckPaidOrder",
+    "group": "Pay",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "0: 等待支付\n1: 支付成功\n2：支付失败",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/pay.py",
+    "groupTitle": "Pay"
+  },
+  {
+    "type": "post",
+    "url": "/api/pay/paid_service",
+    "title": "服务付费",
+    "name": "CreatePayOrder",
+    "group": "Pay",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "type",
+            "description": "<p>类型,1:按人数;2:按机构;3:扩容;4:按人数续费;5:按机构续费</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>金额</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "num",
+            "description": "<p>人数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "duration",
+            "description": "<p>期限/月</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "list",
+            "optional": true,
+            "field": "user_ids",
+            "description": "<p>开通的账户user_id列表</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "channel",
+            "description": "<p>渠道</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "ping++支付对象",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/pay.py",
+    "groupTitle": "Pay"
   },
   {
     "type": "post",
@@ -3450,6 +3543,57 @@ define({ "api": [
     "groupTitle": "User"
   },
   {
+    "type": "post",
+    "url": "/api/user/org",
+    "title": "创建机构",
+    "name": "CreateOrgnation",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "company_name",
+            "description": "<p>公司</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "position",
+            "description": "<p>职位</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "work_year",
+            "description": "<p>工作年限(1:1~3年, 2:3~5年, 3:5~10年, 4:10年以上)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "industry",
+            "description": "<p>行业(1:银行, 2:信托, 3:资管, 4:保险, 5:证券, 6:基金, 7:P2P, 8:三方)</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
+  },
+  {
     "type": "delete",
     "url": "/api/user/org/members/:id",
     "title": "删除机构成员",
@@ -3624,21 +3768,16 @@ define({ "api": [
     "title": "机构成员",
     "name": "OrgMembers",
     "group": "User",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "[{\n    \"id\": 2,\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"work_year\": 3,\n    \"role\": 20              # 用户角色\n    \"total_amount\": {   # 累计成交金额 / 万\n        \"rmb\": 100,\n        \"dollar\": 199\n    }\n}]",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User",
     "parameter": {
       "fields": {
         "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": true,
+            "field": "status",
+            "description": "<p>状态</p>"
+          },
           {
             "group": "Parameter",
             "type": "int",
@@ -3655,7 +3794,19 @@ define({ "api": [
           }
         ]
       }
-    }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"id\": 2,\n    \"name\": \"理财师A\"，\n    \"position\": \"职位理财师\",\n    \"status\": 1,    # 状态 1: 待确认, 2:已确认, 3: 已离职, 4: 已拒绝\n    \"mobile\": \"150694324\",\n    \"work_year\": 3,\n    \"role\": 20              # 用户角色\n    \"total_amount\": {   # 累计成交金额 / 万\n        \"rmb\": 100,\n        \"dollar\": 199\n    }\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "../purchasing_consortia/frontend/user.py",
+    "groupTitle": "User"
   },
   {
     "type": "get",
@@ -3981,7 +4132,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"is_org_member\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n    \"org_member_count\": 3,              # 旗下理财师人数\n    \"role\": 21                          # 角色\n    \"tag\": 2,                           # 用户标签\n}",
+          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"is_org_member\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n    \"org_member_count\": 3,              # 旗下理财师人数\n    \"role\": 21                          # 角色\n    \"tag\": 2,                           # 用户标签\n    \"expire_time\": \"2017-12-12T16:00:00\",# 服务过期时间\n}",
           "type": "json"
         }
       ]
