@@ -2552,7 +2552,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"is_available\": true,   # 是否有权使用系统\n    \"available_status\": 1001,   # 有效状态, 0:无效,1000~2000:试用期,2000~3000:付费期\n    \"expire_time\": \"2017-03-20T12:00:00\"    # 到期时间\n    \"paid_type\": 1, # 付费类型, 1:人数，2:机构\n    \"total_paid_num\": 13,   # 付费名额总量\n    \"remained_paid_num\": 2  # 剩余付费名额\n}",
+          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"is_available\": true,   # 是否有权使用系统\n    \"available_status\": 1001,   # 有效状态, 0:无效,1000~2000:试用期,2000~3000:付费期\n    \"expire_time\": \"2017-03-20T12:00:00\"    # 到期时间\n    \"is_expire\": true,\n    \"expire_days\": 133,     # 过期天数\n    \"paid_type\": 1, # 付费类型, 1:人数，2:机构\n    \"total_paid_num\": 13,   # 付费名额总量\n    \"remained_paid_num\": 2  # 剩余付费名额\n}",
           "type": "json"
         }
       ]
@@ -2659,7 +2659,7 @@
             "type": "string",
             "optional": false,
             "field": "channel",
-            "description": "<p>渠道</p>"
+            "description": "<p>渠道:alipay_qr / wx_pub_qr</p>"
           }
         ]
       }
@@ -2668,7 +2668,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "ping++支付对象",
+          "content": "qrcode",
           "type": "json"
         }
       ]
