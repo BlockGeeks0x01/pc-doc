@@ -2293,7 +2293,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/orders/{订单号}/raises",
+    "url": "/api/orders/{订单号}/risks",
     "title": "获取订单的风险记录",
     "name": "OrderRisks",
     "group": "Order",
