@@ -15,7 +15,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/calendar.py",
+    "filename": "purchasing_consortia/frontend/calendar.py",
     "groupTitle": "CalendarEvent"
   },
   {
@@ -66,7 +66,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/calendar.py",
+    "filename": "purchasing_consortia/frontend/calendar.py",
     "groupTitle": "CalendarEvent"
   },
   {
@@ -89,7 +89,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/calendar.py",
+    "filename": "purchasing_consortia/frontend/calendar.py",
     "groupTitle": "CalendarEvent"
   },
   {
@@ -140,7 +140,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/calendar.py",
+    "filename": "purchasing_consortia/frontend/calendar.py",
     "groupTitle": "CalendarEvent"
   },
   {
@@ -159,7 +159,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/channel.py",
+    "filename": "purchasing_consortia/frontend/channel.py",
     "groupTitle": "Channel"
   },
   {
@@ -178,7 +178,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/channel.py",
+    "filename": "purchasing_consortia/frontend/channel.py",
     "groupTitle": "Channel"
   },
   {
@@ -197,7 +197,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/channel.py",
+    "filename": "purchasing_consortia/frontend/channel.py",
     "groupTitle": "Channel"
   },
   {
@@ -216,7 +216,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/config.py",
+    "filename": "purchasing_consortia/frontend/config.py",
     "groupTitle": "Config"
   },
   {
@@ -316,7 +316,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Constant"
   },
   {
@@ -619,7 +619,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Constant"
   },
   {
@@ -677,7 +677,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Constant"
   },
   {
@@ -749,7 +749,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Constant"
   },
   {
@@ -786,7 +786,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Constant"
   },
   {
@@ -844,7 +844,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Constant"
   },
   {
@@ -895,7 +895,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Constant"
   },
   {
@@ -932,7 +932,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Constant"
   },
   {
@@ -969,7 +969,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1006,7 +1006,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1043,7 +1043,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1080,7 +1080,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1099,7 +1099,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1108,6 +1108,19 @@ define({ "api": [
     "title": "客户详情",
     "name": "CustomerDetail",
     "group": "Customer",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "date_time",
+            "optional": false,
+            "field": "start_date",
+            "description": ""
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -1118,7 +1131,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1137,7 +1150,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1198,7 +1211,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1217,7 +1230,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1227,7 +1240,7 @@ define({ "api": [
     "name": "DeleteCustomer",
     "group": "Customer",
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
   },
   {
@@ -1264,18 +1277,8 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/customers.py",
+    "filename": "purchasing_consortia/frontend/customers.py",
     "groupTitle": "Customer"
-  },
-  {
-    "type": "",
-    "url": "产品的募集记录",
-    "title": "",
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
-    "group": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_product_py",
-    "groupTitle": "E__project_maice_purchasing_consortia_purchasing_consortia_frontend_product_py",
-    "name": ""
   },
   {
     "type": "post",
@@ -1311,7 +1314,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/feedback.py",
+    "filename": "purchasing_consortia/frontend/feedback.py",
     "groupTitle": "Feedback"
   },
   {
@@ -1321,7 +1324,7 @@ define({ "api": [
     "name": "AccessFile",
     "group": "File",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/file.py",
+    "filename": "purchasing_consortia/frontend/file.py",
     "groupTitle": "File"
   },
   {
@@ -1331,7 +1334,7 @@ define({ "api": [
     "name": "AccessFileByMd5",
     "group": "File",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/file.py",
+    "filename": "purchasing_consortia/frontend/file.py",
     "groupTitle": "File"
   },
   {
@@ -1350,7 +1353,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/file.py",
+    "filename": "purchasing_consortia/frontend/file.py",
     "groupTitle": "File"
   },
   {
@@ -1412,7 +1415,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/file.py",
+    "filename": "purchasing_consortia/frontend/file.py",
     "groupTitle": "File"
   },
   {
@@ -1442,7 +1445,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/log.py",
+    "filename": "purchasing_consortia/frontend/log.py",
     "groupTitle": "Log"
   },
   {
@@ -1489,7 +1492,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/notice.py",
+    "filename": "purchasing_consortia/frontend/notice.py",
     "groupTitle": "Notification"
   },
   {
@@ -1499,7 +1502,7 @@ define({ "api": [
     "name": "NotificationReadAll",
     "group": "Notification",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/notice.py",
+    "filename": "purchasing_consortia/frontend/notice.py",
     "groupTitle": "Notification"
   },
   {
@@ -1509,7 +1512,7 @@ define({ "api": [
     "name": "ReadNotification",
     "group": "Notification",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/notice.py",
+    "filename": "purchasing_consortia/frontend/notice.py",
     "groupTitle": "Notification"
   },
   {
@@ -1532,7 +1535,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1562,7 +1565,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1592,7 +1595,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1643,7 +1646,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1687,7 +1690,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1780,7 +1783,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1790,7 +1793,7 @@ define({ "api": [
     "name": "DeleteOrder",
     "group": "Order",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1800,7 +1803,7 @@ define({ "api": [
     "name": "DeleteOrderBonus",
     "group": "Order",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1810,7 +1813,7 @@ define({ "api": [
     "name": "DeleteOrderDistribution",
     "group": "Order",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1829,7 +1832,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1839,7 +1842,7 @@ define({ "api": [
     "name": "DeleteOrderShareChange",
     "group": "Order",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1849,7 +1852,7 @@ define({ "api": [
     "name": "MaiceOrder",
     "group": "Order",
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order",
     "parameter": {
       "fields": {
@@ -1897,7 +1900,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1916,7 +1919,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order",
     "parameter": {
       "fields": {
@@ -1955,7 +1958,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -1994,7 +1997,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2034,7 +2037,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2088,7 +2091,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2107,7 +2110,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2126,7 +2129,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order",
     "parameter": {
       "fields": {
@@ -2165,7 +2168,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2215,6 +2218,13 @@ define({ "api": [
           },
           {
             "group": "Parameter",
+            "type": "datetime",
+            "optional": true,
+            "field": "start_date",
+            "description": "<p>起始日期</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "int",
             "optional": true,
             "field": "page",
@@ -2230,7 +2240,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order",
     "success": {
       "examples": [
@@ -2258,7 +2268,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order",
     "parameter": {
       "fields": {
@@ -2283,6 +2293,25 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/api/orders/{订单号}/raises",
+    "title": "获取订单的风险记录",
+    "name": "OrderRisks",
+    "group": "Order",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "[{\n    \"date\": \"2017-12-16T16:00:00\",  // 风险日期\n    \"type\": 1,      // 1:遭遇风险，2：解除风险\n    \"profit_effect\": true,        // 是否影响收益\n    \"principal_remain\": 80,       // 本金剩余%\n    \"remark\": \"备注\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "purchasing_consortia/frontend/order.py",
+    "groupTitle": "Order"
+  },
+  {
+    "type": "get",
     "url": "/api/orders/:order_no/share_change",
     "title": "订单份额变更记录",
     "name": "OrderShareChange",
@@ -2297,7 +2326,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order",
     "parameter": {
       "fields": {
@@ -2327,7 +2356,7 @@ define({ "api": [
     "name": "OrgOrders",
     "group": "Order",
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order",
     "parameter": {
       "fields": {
@@ -2375,7 +2404,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2405,7 +2434,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2435,7 +2464,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2495,7 +2524,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2539,7 +2568,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/order.py",
+    "filename": "purchasing_consortia/frontend/order.py",
     "groupTitle": "Order"
   },
   {
@@ -2552,13 +2581,13 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"is_available\": true,   # 是否有权使用系统\n    \"available_status\": 1001,   # 有效状态, 0:无效,1000~2000:试用期,2000~3000:付费期\n    \"expire_time\": \"2017-03-20T12:00:00\"    # 到期时间\n    \"is_expire\": true,\n    \"expire_days\": 133,     # 过期天数\n    \"paid_type\": 1, # 付费类型, 1:人数，2:机构\n    \"total_paid_num\": 13,   # 付费名额总量\n    \"remained_paid_num\": 2  # 剩余付费名额\n}",
+          "content": "{\n    \"company_name\": \"机构名称\",\n    \"industry\": 12, # 行业\n    \"logo\": \"http://dsadsadasdsa.jpg\",\n    \"employees\": 100,\n    \"products\": {\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"customers\": {\n        \"total\": 300,\n        \"existence\": 99,\n    }\n    \"amounts\": {\n        \"total\": {  # 总配置\n            \"rmb\": 0,\n            \"dollar\": 0\n        },\n        \"existence\": {  #  存续\n            \"rmb\": 0,\n            \"dollar\": 0\n        }\n    },\n    \"orders\": {         # 单量\n        \"total\": 300,\n        \"existence\": 99,\n    },\n    \"is_available\": true,   # 是否有权使用系统\n    \"available_status\": 1001,   # 有效状态, 0:无效,1000~2000:试用期,2000~3000:付费期\n    \"expire_time\": \"2017-03-20T12:00:00\"    # 到期时间\n    \"is_expire\": true,\n    \"expire_days\": 133,     # 过期天数\n    \"paid_type\": 1, # 付费类型, 1:人数，2:机构\n    \"total_paid_num\": 13,   # 付费名额总量\n    \"remained_paid_num\": 2  # 剩余付费名额\n    \"owner\": {\n        \"user_id\": 100944,\n        \"name\": \"小米\"\n    }\n}",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/org.py",
+    "filename": "purchasing_consortia/frontend/org.py",
     "groupTitle": "Org"
   },
   {
@@ -2579,6 +2608,13 @@ define({ "api": [
           },
           {
             "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "company_name",
+            "description": "<p>机构名称</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "int",
             "optional": false,
             "field": "available_status",
@@ -2588,7 +2624,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/org.py",
+    "filename": "purchasing_consortia/frontend/org.py",
     "groupTitle": "Org"
   },
   {
@@ -2607,7 +2643,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/pay.py",
+    "filename": "purchasing_consortia/frontend/pay.py",
     "groupTitle": "Pay"
   },
   {
@@ -2668,13 +2704,13 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "qrcode",
+          "content": "{\n    \"qrcode\": \"http://sssss.png\",\n    \"sn\": \"321321312\"\n}",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/pay.py",
+    "filename": "purchasing_consortia/frontend/pay.py",
     "groupTitle": "Pay"
   },
   {
@@ -2693,7 +2729,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2723,7 +2759,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2733,7 +2769,7 @@ define({ "api": [
     "name": "DeleteProduct",
     "group": "Product",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2752,7 +2788,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2771,7 +2807,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2838,7 +2874,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2848,7 +2884,7 @@ define({ "api": [
     "name": "OrgProductDetail",
     "group": "Product",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product",
     "success": {
       "examples": [
@@ -2876,7 +2912,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2943,7 +2979,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2962,7 +2998,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -2972,7 +3008,7 @@ define({ "api": [
     "name": "ProductDetail",
     "group": "Product",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product",
     "success": {
       "examples": [
@@ -3000,7 +3036,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3039,7 +3075,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3070,7 +3106,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3089,7 +3125,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product",
     "parameter": {
       "fields": {
@@ -3128,7 +3164,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3165,7 +3201,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product",
     "success": {
       "examples": [
@@ -3220,7 +3256,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3230,7 +3266,7 @@ define({ "api": [
     "name": "UpdateProduct",
     "group": "Product",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3249,7 +3285,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3279,7 +3315,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3289,7 +3325,7 @@ define({ "api": [
     "name": "deleteProductValues",
     "group": "Product",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3319,7 +3355,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/product.py",
+    "filename": "purchasing_consortia/frontend/product.py",
     "groupTitle": "Product"
   },
   {
@@ -3351,7 +3387,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/search.py",
+    "filename": "purchasing_consortia/frontend/search.py",
     "groupTitle": "Search"
   },
   {
@@ -3381,7 +3417,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/sms.py",
+    "filename": "purchasing_consortia/frontend/sms.py",
     "groupTitle": "Sms"
   },
   {
@@ -3400,7 +3436,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Structure"
   },
   {
@@ -3419,7 +3455,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/apidoc.py",
+    "filename": "purchasing_consortia/apidoc.py",
     "groupTitle": "Structure"
   },
   {
@@ -3429,7 +3465,7 @@ define({ "api": [
     "name": "server_time",
     "group": "Time",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/maice_time.py",
+    "filename": "purchasing_consortia/frontend/maice_time.py",
     "groupTitle": "Time"
   },
   {
@@ -3439,7 +3475,7 @@ define({ "api": [
     "name": "AcceptInvite",
     "group": "User",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3458,7 +3494,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3516,7 +3552,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3539,58 +3575,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
-    "groupTitle": "User"
-  },
-  {
-    "type": "post",
-    "url": "/api/user/org",
-    "title": "创建机构",
-    "name": "CreateOrgnation",
-    "group": "User",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "name",
-            "description": "<p>姓名</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "company_name",
-            "description": "<p>公司</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "position",
-            "description": "<p>职位</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "work_year",
-            "description": "<p>工作年限(1:1~3年, 2:3~5年, 3:5~10年, 4:10年以上)</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "industry",
-            "description": "<p>行业(1:银行, 2:信托, 3:资管, 4:保险, 5:证券, 6:基金, 7:P2P, 8:三方)</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3600,7 +3585,7 @@ define({ "api": [
     "name": "DeleteOrgMembers",
     "group": "User",
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3619,7 +3604,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3638,7 +3623,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3657,7 +3642,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3708,7 +3693,7 @@ define({ "api": [
         ]
       }
     },
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3738,7 +3723,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3749,7 +3734,7 @@ define({ "api": [
     "group": "User",
     "description": "<p>用户注销</p>",
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3759,7 +3744,7 @@ define({ "api": [
     "name": "MemberQuit",
     "group": "User",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3805,7 +3790,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3824,7 +3809,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3834,7 +3819,7 @@ define({ "api": [
     "name": "QuitOrg",
     "group": "User",
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3880,7 +3865,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3890,7 +3875,7 @@ define({ "api": [
     "name": "RejectInvite",
     "group": "User",
     "version": "1.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3920,7 +3905,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3957,7 +3942,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -3978,20 +3963,6 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "position",
-            "description": "<p>职位</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "work_year",
-            "description": "<p>年限</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "int",
             "optional": false,
             "field": "role",
@@ -4001,7 +3972,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -4045,7 +4016,7 @@ define({ "api": [
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -4063,12 +4034,19 @@ define({ "api": [
             "optional": true,
             "field": "avatar",
             "description": "<p>头像</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": "<p>名字</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -4087,7 +4065,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -4119,7 +4097,7 @@ define({ "api": [
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
   },
   {
@@ -4132,13 +4110,23 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"is_org_member\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n    \"org_member_count\": 3,              # 旗下理财师人数\n    \"role\": 21                          # 角色\n    \"tag\": 2,                           # 用户标签\n    \"expire_time\": \"2017-12-12T16:00:00\",# 服务过期时间\n}",
+          "content": "{\n    \"user_id\": 100094,\n    \"mobile\": \"1321321312\"\n    \"is_admin\": true,\n    \"is_org_member\": true,\n    \"admin_id\": 100130,\n    \"name\": \"小明\",\n    \"avatar\": \"http://dsadsasjda.png\",  # 头像\n    \"certification_status\": 0,          # 认证状态, 0:未认证,1:待审核,2:修改中,3:认证通过\n    \"unread_notifications\": 33,         # 未读消息数\n    \"org_member_count\": 3,              # 旗下理财师人数\n    \"role\": 21                          # 角色\n    \"tag\": 2,                           # 用户标签\n    \"expire_time\": \"2017-12-12T16:00:00\",# 服务过期时间\n    \"is_expired\": true                  # 是否过期\n}",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "../purchasing_consortia/frontend/user.py",
+    "filename": "purchasing_consortia/frontend/user.py",
     "groupTitle": "User"
+  },
+  {
+    "type": "",
+    "url": "产品的募集记录",
+    "title": "",
+    "version": "0.0.0",
+    "filename": "purchasing_consortia/frontend/product.py",
+    "group": "_home_ericsgy_project_purchasing_consortia_purchasing_consortia_frontend_product_py",
+    "groupTitle": "_home_ericsgy_project_purchasing_consortia_purchasing_consortia_frontend_product_py",
+    "name": ""
   }
 ] });
